@@ -10,14 +10,14 @@ function resolvePath(dir) {
   return path.join(__dirname, '..', dir);
 }
 
-module.exports = {
+let webpackConfig = {
   mode: 'development',
   entry: [
-    './src/app.js'
+    './src/main.js'
   ],
   output: {
     path: resolvePath('www'),
-    filename: 'app.js',
+    filename: 'main.js',
     publicPath: ''
   },
   resolve: {
@@ -112,7 +112,7 @@ module.exports = {
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       filename: './index.html',
-      template: './src/index.html',
+      template: './index.html',
       inject: true,
     }),
     new MiniCssExtractPlugin({
@@ -124,3 +124,6 @@ module.exports = {
     }]),
   ]
 }
+
+
+module.exports = webpackConfig

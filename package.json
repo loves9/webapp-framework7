@@ -1,10 +1,10 @@
 {
-  "name": "framework7-template-vue-webpack",
+  "name": "webapp-framework7",
   "version": "2.0.0",
   "description": "Framework7 Vue Webpack starter app template",
   "scripts": {
-    "build-dev": "node ./build/dev.js",
-    "build-prod": "node ./build/prod.js",
+    "build-dev": "node ./build/build-dev.js",
+    "build-prod": "node ./build/build-prod.js",
     "dev": "webpack-dev-server --config ./build/webpack.config.dev.js",
     "prod": "webpack-dev-server --config ./build/webpack.config.prod.js",
     "start": "npm run dev",
@@ -26,7 +26,7 @@
     "app",
     "f7"
   ],
-  "author": "Vladimir Kharlampidi",
+  "author": "",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/framework7io/framework7-template-vue-webpack/issues"

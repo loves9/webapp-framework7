@@ -15,11 +15,11 @@ function resolvePath(dir) {
 module.exports = {
   mode: 'production',
   entry: [
-    './src/app.js'
+    './src/main.js'
   ],
   output: {
     path: resolvePath('www'),
-    filename: 'app.js',
+    filename: 'main.js',
     publicPath: ''
   },
   resolve: {
