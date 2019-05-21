@@ -110,7 +110,7 @@ let prodWebpackConfig = webpackMerge(baseWebpackConfig, {
   // },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': JSON.stringify('production'),
+      'process.env': require('../config/prod.env') // JSON.stringify('production'),
     }),
     new UglifyJsPlugin({
       uglifyOptions: {
@@ -138,7 +138,7 @@ let prodWebpackConfig = webpackMerge(baseWebpackConfig, {
         removeComments: true,
         collapseWhitespace: true,
         removeAttributeQuotes: true,
-      },
+      }
     }),
     new webpack.HashedModuleIdsPlugin(),
     new webpack.optimize.ModuleConcatenationPlugin(),
@@ -148,7 +148,7 @@ let prodWebpackConfig = webpackMerge(baseWebpackConfig, {
     new CopyWebpackPlugin([{
       from: resolvePath('static'),
       to: resolvePath('www/static'),
-    }]),
+    }])
   ]
 });
 
