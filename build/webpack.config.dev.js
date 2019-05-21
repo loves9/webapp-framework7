@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const webpackMerge = require('webpack-merge')
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -6,27 +7,29 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const path = require('path');
 
+const baseWebpackConfig = require('./webpack.config.base')
+
 function resolvePath(dir) {
   return path.join(__dirname, '..', dir);
 }
 
-let webpackConfig = {
+let devWebpackConfig = webpackMerge(baseWebpackConfig, {
   mode: 'development',
-  entry: [
-    './src/main.js'
-  ],
-  output: {
-    path: resolvePath('www'),
-    filename: 'main.js',
-    publicPath: ''
-  },
-  resolve: {
-    extensions: ['.js', '.vue', '.json'],
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js',
-      '@': resolvePath('src'),
-    }
-  },
+  // entry: [
+  //   './src/main.js'
+  // ],
+  // output: {
+  //   path: resolvePath('www'),
+  //   filename: 'main.js',
+  //   publicPath: ''
+  // },
+  // resolve: {
+  //   extensions: ['.js', '.vue', '.json'],
+  //   alias: {
+  //     'vue$': 'vue/dist/vue.esm.js',
+  //     '@': resolvePath('src'),
+  //   }
+  // },
   devServer: {
     hot: true,
     open: true,
@@ -36,82 +39,82 @@ let webpackConfig = {
       poll: true
     }
   },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        use: 'babel-loader',
-        include: [
-          resolvePath('src'),
-          resolvePath('node_modules/framework7'),
-          resolvePath('node_modules/framework7-vue'),
-          resolvePath('node_modules/template7'),
-          resolvePath('node_modules/dom7'),
-          resolvePath('node_modules/ssr-window'),
-        ],
-      },
-      {
-        test: /\.vue$/,
-        use: 'vue-loader',
-      },
-      {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-        ],
-      },
-      {
-        test: /\.styl(us)?$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'stylus-loader',
-        ],
-      },
-      {
-        test: /\.less$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'less-loader',
-        ],
-      },
-      {
-        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10000,
-          name: 'images/[name].[hash:7].[ext]'
-        }
-      },
-      {
-        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10000,
-          name: 'media/[name].[hash:7].[ext]'
-        }
-      },
-      {
-        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10000,
-          name: 'fonts/[name].[hash:7].[ext]'
-        }
-      }
-    ]
-  },
+  // module: {
+  //   rules: [
+  //     {
+  //       test: /\.js$/,
+  //       use: 'babel-loader',
+  //       include: [
+  //         resolvePath('src'),
+  //         resolvePath('node_modules/framework7'),
+  //         resolvePath('node_modules/framework7-vue'),
+  //         resolvePath('node_modules/template7'),
+  //         resolvePath('node_modules/dom7'),
+  //         resolvePath('node_modules/ssr-window'),
+  //       ],
+  //     },
+  //     {
+  //       test: /\.vue$/,
+  //       use: 'vue-loader',
+  //     },
+  //     {
+  //       test: /\.css$/,
+  //       use: [
+  //         MiniCssExtractPlugin.loader,
+  //         'css-loader',
+  //       ],
+  //     },
+  //     {
+  //       test: /\.styl(us)?$/,
+  //       use: [
+  //         MiniCssExtractPlugin.loader,
+  //         'css-loader',
+  //         'stylus-loader',
+  //       ],
+  //     },
+  //     {
+  //       test: /\.less$/,
+  //       use: [
+  //         MiniCssExtractPlugin.loader,
+  //         'css-loader',
+  //         'less-loader',
+  //       ],
+  //     },
+  //     {
+  //       test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+  //       loader: 'url-loader',
+  //       options: {
+  //         limit: 10000,
+  //         name: 'images/[name].[hash:7].[ext]'
+  //       }
+  //     },
+  //     {
+  //       test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+  //       loader: 'url-loader',
+  //       options: {
+  //         limit: 10000,
+  //         name: 'media/[name].[hash:7].[ext]'
+  //       }
+  //     },
+  //     {
+  //       test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+  //       loader: 'url-loader',
+  //       options: {
+  //         limit: 10000,
+  //         name: 'fonts/[name].[hash:7].[ext]'
+  //       }
+  //     }
+  //   ]
+  // },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': JSON.stringify('development'),
+      'process.env': require('../config/dev.env') //JSON.stringify('development'),
     }),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      filename: './index.html',
+      filename: 'index.html',
       template: './index.html',
       inject: true,
     }),
@@ -123,7 +126,7 @@ let webpackConfig = {
       to: resolvePath('www/static'),
     }]),
   ]
-}
+});
 
 
-module.exports = webpackConfig
+module.exports = devWebpackConfig

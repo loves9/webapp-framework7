@@ -11,7 +11,7 @@ function resolvePath(dir) {
 }
 
 let webpackConfig = {
-    mode: "development",
+    // mode: "development",
     entry: ["./src/main.js"],
     output: {
         path: resolvePath("www"),
@@ -25,15 +25,15 @@ let webpackConfig = {
             "@": resolvePath("src")
         }
     },
-    devServer: {
-        hot: true,
-        open: true,
-        compress: true,
-        contentBase: "/www/",
-        watchOptions: {
-            poll: true
-        }
-    },
+    // devServer: {
+    //     hot: true,
+    //     open: true,
+    //     compress: true,
+    //     contentBase: "/www/",
+    //     watchOptions: {
+    //         poll: true
+    //     }
+    // },
     module: {
         rules: [
             {
@@ -95,26 +95,26 @@ let webpackConfig = {
         ]
     },
     plugins: [
-        new webpack.DefinePlugin({
-            "process.env": JSON.stringify("development")
-        }),
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NamedModulesPlugin(),
-        new VueLoaderPlugin(),
-        new HtmlWebpackPlugin({
-            filename: "./index.html",
-            template: "./index.html",
-            inject: true
-        }),
-        new MiniCssExtractPlugin({
-            filename: "app.css"
-        }),
-        new CopyWebpackPlugin([
-            {
-                from: resolvePath("static"),
-                to: resolvePath("www/static")
-            }
-        ])
+        // new webpack.DefinePlugin({
+        //     "process.env": JSON.stringify("development")
+        // }),
+        // new webpack.HotModuleReplacementPlugin(),
+        // new webpack.NamedModulesPlugin(),
+        // new VueLoaderPlugin(),
+        // new HtmlWebpackPlugin({
+        //     filename: "./index.html",
+        //     template: "./index.html",
+        //     inject: true
+        // }),
+        // new MiniCssExtractPlugin({
+        //     filename: "app.css"
+        // }),
+        // new CopyWebpackPlugin([
+        //     {
+        //         from: resolvePath("static"),
+        //         to: resolvePath("www/static")
+        //     }
+        // ])
     ]
 };
 

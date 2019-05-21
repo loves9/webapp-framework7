@@ -53,5 +53,9 @@
     </f7-page>
 </template>
 <script>
-export default {};
+export default {
+    mounted(){
+        console.log('hhhhhhhhh', process.env)
+    }
+};
 </script>
