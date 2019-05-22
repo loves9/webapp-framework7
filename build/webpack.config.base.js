@@ -41,6 +41,18 @@ let webpackConfig = {
   //         poll: true
   //     }
   // },
+  devServer: {
+    clientLogLevel: 'warning',
+    hot: true,
+    host: process.env.HOST || config.dev.host,
+    port: process.env.PORT || config.dev.port,
+    open: config.dev.autoOpenBrowser,
+    compress: true,
+    // contentBase: '/www/',
+    watchOptions: {
+      poll: true
+    }
+  },
   module: {
     rules: [
       {
@@ -118,6 +130,13 @@ let webpackConfig = {
     //         to: resolvePath("www/static")
     //     }
     // ])
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../static'),
+        to: config.build.assetsSubDirectory,
+        ignore: ['.*']
+      }
+    ])
   ]
 };
 

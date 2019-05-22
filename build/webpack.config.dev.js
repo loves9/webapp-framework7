@@ -32,18 +32,18 @@ let devWebpackConfig = webpackMerge(baseWebpackConfig, {
   //     '@': resolvePath('src'),
   //   }
   // },
-  devServer: {
-    clientLogLevel: 'warning',
-    hot: true,
-    host: process.env.HOST || config.dev.host,
-    port: process.env.PORT || config.dev.port,
-    open: config.dev.autoOpenBrowser,
-    compress: true,
-    // contentBase: '/www/',
-    watchOptions: {
-      poll: true
-    }
-  },
+  // devServer: {
+  //   clientLogLevel: 'warning',
+  //   hot: true,
+  //   host: process.env.HOST || config.dev.host,
+  //   port: process.env.PORT || config.dev.port,
+  //   open: config.dev.autoOpenBrowser,
+  //   compress: true,
+  //   // contentBase: '/www/',
+  //   watchOptions: {
+  //     poll: true
+  //   }
+  // },
   // module: {
   //   rules: [
   //     {
@@ -130,13 +130,13 @@ let devWebpackConfig = webpackMerge(baseWebpackConfig, {
     //   from: resolvePath('static'),
     //   to: resolvePath('www/static'),
     // }]),
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, '../static'),
-        to: config.build.assetsSubDirectory,
-        ignore: ['.*']
-      }
-    ])
+    // new CopyWebpackPlugin([
+    //   {
+    //     from: path.resolve(__dirname, '../static'),
+    //     to: config.build.assetsSubDirectory,
+    //     ignore: ['.*']
+    //   }
+    // ])
   ]
 });
 

@@ -32,15 +32,15 @@ let prodWebpackConfig = webpackMerge(baseWebpackConfig, {
   //     '@': resolvePath('src'),
   //   }
   // },
-  devServer: {
-    hot: true,
-    open: true,
-    compress: true,
-    contentBase: '/www/',
-    watchOptions: {
-      poll: true
-    }
-  },
+  // devServer: {
+  //   hot: true,
+  //   open: true,
+  //   compress: true,
+  //   contentBase: '/www/',
+  //   watchOptions: {
+  //     poll: true
+  //   }
+  // },
   // module: {
   //   rules: [
   //     {
@@ -149,13 +149,13 @@ let prodWebpackConfig = webpackMerge(baseWebpackConfig, {
     //   from: resolvePath('static'),
     //   to: resolvePath('www/static'),
     // }]),
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, '../static'),
-        to: config.build.assetsSubDirectory,
-        ignore: ['.*']
-      }
-    ])
+    // new CopyWebpackPlugin([
+    //   {
+    //     from: path.resolve(__dirname, '../static'),
+    //     to: config.build.assetsSubDirectory,
+    //     ignore: ['.*']
+    //   }
+    // ])
   ]
 });
 

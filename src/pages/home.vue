@@ -1,12 +1,12 @@
 <template>
     <f7-page>
-        <f7-navbar style="background-color:#dedede">
+        <f7-navbar bg-color="blue">
             <f7-nav-left>
-                <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="left"></f7-link>
+                <f7-link class="f7-icons color-white" icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="left"></f7-link>
             </f7-nav-left>
             <f7-nav-title>Home</f7-nav-title>
             <f7-nav-right>
-                <f7-link icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="right"></f7-link>
+                <f7-link class="f7-icons color-white" icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="right"></f7-link>
             </f7-nav-right>
         </f7-navbar>
         <f7-toolbar bottom>
@@ -54,8 +54,20 @@
 </template>
 <script>
 export default {
-    mounted(){
-        console.log('hhhhhhhhh', process.env)
+    mounted() {
+        console.log("mounted");
+    },
+    created() {
+        console.log("created");
+    },
+    activated() {
+        console.log("activated");
+    },
+    deactivated() {
+        console.log("deactivated");
+    },
+    destroyed() {
+        console.log("destroyed");
     }
 };
 </script>
