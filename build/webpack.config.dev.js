@@ -9,6 +9,8 @@ const path = require('path');
 
 const baseWebpackConfig = require('./webpack.config.base')
 
+const config = require('../config')
+
 function resolvePath(dir) {
   return path.join(__dirname, '..', dir);
 }
@@ -31,10 +33,13 @@ let devWebpackConfig = webpackMerge(baseWebpackConfig, {
   //   }
   // },
   devServer: {
+    clientLogLevel: 'warning',
     hot: true,
-    open: true,
+    host: process.env.HOST || config.dev.host,
+    port: process.env.PORT || config.dev.port,
+    open: config.dev.autoOpenBrowser,
     compress: true,
-    contentBase: '/www/',
+    // contentBase: '/www/',
     watchOptions: {
       poll: true
     }
@@ -115,16 +120,23 @@ let devWebpackConfig = webpackMerge(baseWebpackConfig, {
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: './index.html',
+      template: 'index.html',
       inject: true,
     }),
     new MiniCssExtractPlugin({
       filename: 'app.css'
     }),
-    new CopyWebpackPlugin([{
-      from: resolvePath('static'),
-      to: resolvePath('www/static'),
-    }]),
+    // new CopyWebpackPlugin([{
+    //   from: resolvePath('static'),
+    //   to: resolvePath('www/static'),
+    // }]),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../static'),
+        to: config.build.assetsSubDirectory,
+        ignore: ['.*']
+      }
+    ])
   ]
 });
 

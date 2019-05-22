@@ -145,10 +145,17 @@ let prodWebpackConfig = webpackMerge(baseWebpackConfig, {
     new MiniCssExtractPlugin({
       filename: 'app.css'
     }),
-    new CopyWebpackPlugin([{
-      from: resolvePath('static'),
-      to: resolvePath('www/static'),
-    }])
+    // new CopyWebpackPlugin([{
+    //   from: resolvePath('static'),
+    //   to: resolvePath('www/static'),
+    // }]),
+    new CopyWebpackPlugin([
+      {
+        from: path.resolve(__dirname, '../static'),
+        to: config.build.assetsSubDirectory,
+        ignore: ['.*']
+      }
+    ])
   ]
 });
 
