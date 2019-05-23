@@ -4,6 +4,9 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+const portfinder = require('portfinder')
+
 
 const path = require('path');
 
@@ -142,3 +145,29 @@ let devWebpackConfig = webpackMerge(baseWebpackConfig, {
 
 
 module.exports = devWebpackConfig
+
+// module.exports = new Promise((resolve, reject) => {
+//   portfinder.basePort = process.env.PORT || config.dev.port
+//   portfinder.getPort((err, port) => {
+//     if (err) {
+//       reject(err)
+//     } else {
+//       // publish the new Port, necessary for e2e tests
+//       process.env.PORT = port
+//       // add port to devServer config
+//       devWebpackConfig.devServer.port = port
+
+//       // Add FriendlyErrorsPlugin
+//       devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
+//         compilationSuccessInfo: {
+//           messages: [`Your application is running here: http://localhost:${port}`],
+//         },
+//         onErrors: config.dev.notifyOnErrors
+//         ? utils.createNotifierCallback()
+//         : undefined
+//       }))
+
+//       resolve(devWebpackConfig)
+//     }
+//   })
+// })
