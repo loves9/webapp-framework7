@@ -156,9 +156,12 @@ class BusinessRequest {
 
     beforeRequest() {
         if (this.config.mask) {
-            GlobalVueObject.$vux.loading.show({
-                text: this.config.maskMsg
-            })
+            GlobalVueObject.$f7.dialog.preloader(this.config.maskMsg)
+            setTimeout(() => {
+                GlobalVueObject.$f7.dialog.close();
+                
+                // TODO: 超时
+            }, 60000);
         }
     }
 
@@ -209,7 +212,7 @@ class BusinessRequest {
                 async: true,
                 data: parameter,
                 complete: function () {
-                    GlobalVueObject.$vux.loading.hide()
+                    GlobalVueObject.$f7.dialog.close();
 
                     if (_this.complete == undefined) {
                         return
@@ -218,7 +221,7 @@ class BusinessRequest {
                     _this.complete()
                 },
                 success: function (data, status, xhr) {
-                    GlobalVueObject.$vux.loading.hide()
+                    GlobalVueObject.$f7.dialog.close();
 
                     data = JSON.parse(data);
 
@@ -233,7 +236,7 @@ class BusinessRequest {
                     stop(data, status, xhr, parameter)
                 },
                 error: function (data, status, xhr) {
-                    GlobalVueObject.$vux.loading.hide()
+                    GlobalVueObject.$f7.dialog.close();
 
                     if (_this.config.autoToast) {
                         GlobalVueObject.$vux.toast.show({
@@ -256,18 +259,18 @@ class BusinessRequest {
                 }
             })
         } else {
-            if (process.env == 'development') {
-                GlobalVueObject.$vux.toast.show({
-                    text: 'MXCommon未初始化，正在调用axios'
-                })
+            if (process.env.NODE_ENV == 'development') {
+                // GlobalVueObject.$f7.dialog.preloader('MXCommon未初始化，正在调用axios')
             }
+
+            return;
             
             axios({
                 method: _this.config.method,
                 url: _this.config.url,
                 data: parameter
             }).then(response => {
-                GlobalVueObject.$vux.loading.hide()
+                GlobalVueObject.$f7.dialog.close();
 
                 if (response.status == 200) {
                     _this.success(response.data, response.status, '')
@@ -278,7 +281,7 @@ class BusinessRequest {
                 _this.complete()
             }).catch(error => {
                 console.log(error);
-                GlobalVueObject.$vux.loading.hide()
+                GlobalVueObject.$f7.dialog.close();
 
                 if (_this.config.autoToast) {
                     GlobalVueObject.$vux.toast.show({

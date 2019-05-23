@@ -2,11 +2,21 @@
     <f7-page>
         <f7-navbar bg-color="blue">
             <f7-nav-left>
-                <f7-link class="f7-icons color-white" icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="left"></f7-link>
+                <f7-link
+                    class="f7-icons color-white"
+                    icon-if-ios="f7:menu"
+                    icon-if-md="material:menu"
+                    panel-open="left"
+                ></f7-link>
             </f7-nav-left>
             <f7-nav-title>Home</f7-nav-title>
             <f7-nav-right>
-                <f7-link class="f7-icons color-white" icon-if-ios="f7:menu" icon-if-md="material:menu" panel-open="right"></f7-link>
+                <f7-link
+                    class="f7-icons color-white"
+                    icon-if-ios="f7:menu"
+                    icon-if-md="material:menu"
+                    panel-open="right"
+                ></f7-link>
             </f7-nav-right>
         </f7-navbar>
         <f7-toolbar bottom>
@@ -18,7 +28,7 @@
         </f7-block>
         <f7-block-title>Navigation</f7-block-title>
         <f7-list>
-            <f7-list-item link="/about/" title="About"></f7-list-item>
+            <f7-list-item link="#" title="About" @click="next"></f7-list-item>
             <f7-list-item link="/form/" title="Form"></f7-list-item>
         </f7-list>
         <f7-block-title>Modals</f7-block-title>
@@ -56,20 +66,44 @@
 import HttpBusinessRequest from "@/pages/api/api.js";
 
 export default {
-    mounted() {
-        console.log("mounted");
-    },
     created() {
         console.log("created");
     },
-    activated() {
-        console.log("activated");
+    mounted() {
+        console.log("mounted");
+        // this.sendRequest();
+    },
+    destroyed() {
+        console.log("destroyed");
+    },
+    BeforeIn(arg) {
+        console.log("pageBeforeIn");
     },
     deactivated() {
         console.log("deactivated");
     },
-    destroyed() {
-        console.log("destroyed");
+    methods: {
+        /**
+         * 请求示例
+         *
+         */
+        sendRequest() {
+            let request = HttpBusinessRequest.queryMockServer();
+            request.complete = () => {
+                console.log("complete");
+            };
+            request.success = (data, status, xhr) => {
+                console.log(data);
+            };
+            request.error = (data, status, xhr) => {
+                console.log(data);
+            };
+            // 发送请求
+            request.send();
+        },
+        next(){
+            this.$f7router.navigate('/about/')
+        }
     }
 };
 </script>

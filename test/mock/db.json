@@ -1,0 +1,255 @@
+{
+  "user": [
+    {
+      "id": "001170",
+      "loginName": "ftys",
+      "name": "坂田银时",
+      "password": "123456",
+      "token": "abcjsaldkfjkl"
+    },
+    {
+      "id": "001171",
+      "loginName": "xwmr",
+      "name": "漩涡鸣人",
+      "password": "123456",
+      "token": "abcjsaldkfjkl"
+    },
+    {
+      "id": "001172",
+      "loginName": "alkd",
+      "name": "阿鲁卡多",
+      "password": "123456",
+      "token": "abcjsaldkfjkl"
+    },
+    {
+      "id": "001172",
+      "loginName": "mqlf",
+      "name": "蒙奇路飞",
+      "password": "123456",
+      "token": "abcjsaldkfjkl"
+    },
+    {
+      "id": "001172",
+      "loginName": "al",
+      "name": "艾伦",
+      "password": "123456",
+      "token": "abcjsaldkfjkl"
+    },
+    {
+      "id": "001172",
+      "loginName": "oemt",
+      "name": "欧尔麦特",
+      "password": "123456",
+      "token": "abcjsaldkfjkl"
+    }
+  ],
+  "todo": {
+    "content": [
+      {
+        "bussinessKey": "01012074548",
+        "createTime": "到达：2018-03-22",
+        "endTime": "2018-08-23T06:20:17.175Z",
+        "processId": "process-project-apply:7:478467",
+        "processName": "分公司投放条件审批流程",
+        "startBy": "赵六",
+        "taskId": "500013",
+        "taskName": "提交审核",
+        "title": "固定收益-新增菜单",
+        "url": "projectManageInfo"
+      },
+      {
+        "bussinessKey": "01012074548",
+        "createTime": "到达：2018-03-22",
+        "endTime": "2018-08-23T06:20:17.175Z",
+        "processId": "process-project-apply:7:478467",
+        "processName": "分公司投放条件审批流程",
+        "startBy": "赵六",
+        "taskId": "500013",
+        "taskName": "复核",
+        "title": "用户需求说明书-【YG-HB17171-A】【公文系统-华融简…",
+        "url": "projectManageInfo"
+      },
+      {
+        "bussinessKey": "01012074548",
+        "createTime": "到达：2018-03-22",
+        "endTime": "2018-08-23T06:20:17.175Z",
+        "processId": "process-project-apply:7:478467",
+        "processName": "项目申报流程-演示",
+        "startBy": "赵六",
+        "taskId": "500013",
+        "taskName": "部门负责人审核",
+        "title": "固定收益-新增菜单用户需求说明书-【YG-HB17171-A】【公文系统-华融简用户需求说明书-【YG-HB17171-A】【公文系统-华融简",
+        "url": "projectManageInfo"
+      }
+    ],
+    "first": true,
+    "last": true,
+    "number": 0,
+    "numberOfElements": 0,
+    "size": 0,
+    "sort": {},
+    "totalElements": 0,
+    "totalPages": 0
+  },
+  "done": {
+    "content": [],
+    "first": true,
+    "last": true,
+    "number": 0,
+    "numberOfElements": 0,
+    "size": 0,
+    "sort": {},
+    "totalElements": 0,
+    "totalPages": 0
+  },
+  "todoDetail": {
+    "evalFunc": "toastMessage",
+    "id": "500323",
+    "name": "提交审核",
+    "createTime": "2018-08-14 08:45:01",
+    "dueDate": null,
+    "executionId": null,
+    "processInstance": {
+      "id": "500311",
+      "title": "项目管理-项目基本信息-审批",
+      "businessKey": "01012079628",
+      "definitionId": "process-project-apply:7:478467",
+      "definitionName": "项目申报流程-演示",
+      "currentActivity": null,
+      "startParticipant": {
+        "id": "zhaoliu@test.com",
+        "code": null,
+        "name": "赵六",
+        "org": "0101",
+        "orgName": null,
+        "type": null
+      }
+    },
+    "operations": [
+      {
+        "op": "agree",
+        "text": "同意",
+        "key": "submitTask",
+        "userRange": null,
+        "plural": false,
+        "needUserId": false,
+        "url": "/bpm/task/agree"
+      },
+      {
+        "op": "refuse",
+        "text": "拒绝",
+        "key": "terminateProcess",
+        "userRange": null,
+        "plural": false,
+        "needUserId": false,
+        "url": "/bpm/instance/terminate"
+      },
+      {
+        "op": "delegate",
+        "text": "改派",
+        "key": "delegateProcess",
+        "userRange": null,
+        "plural": false,
+        "needUserId": false,
+        "url": "/bpm/instance/delegate"
+      },
+      {
+        "op": "addSign",
+        "text": "加签",
+        "key": "delegateProcess",
+        "userRange": null,
+        "plural": false,
+        "needUserId": false,
+        "url": "/bpm/instance/addSign"
+      }
+    ],
+    "activity": {
+      "id": "sid-B9AD6AA5-5E6F-48DC-8066-40A18545AA28",
+      "name": "提交审核",
+      "first": true,
+      "last": false
+    },
+    "pcUrl": "projectManageInfo",
+    "mobileUrl": null
+  },
+  "transfer": [
+    {
+      "id": "347692",
+      "processInstanceId": null,
+      "executionId": null,
+      "name": "领导审批",
+      "createTime": "2018-06-29 17:41",
+      "startTime": "2018-06-29",
+      "endTime": "2018-06-29 17:42",
+      "durationInMillis": "66000",
+      "dueDate": null,
+      "deleteReason": null,
+      "participant": {
+        "id": "21631475849108832",
+        "code": "wangzeyu@chamc.com.cn@25403",
+        "name": "王凯",
+        "org": "ORG100002274",
+        "orgName": "软件开发部",
+        "type": null
+      },
+      "comment": {
+        "id": null,
+        "author": "wangzeyu@chamc.com.cn@25403",
+        "message": "reject|这里显示审批意见内容。这里显示审批意见内容。这里显示审批意见内容。 ",
+        "createTime": null
+      }
+    },
+    {
+      "comment": {
+        "id": null,
+        "author": "wangzeyu@chamc.com.cn@25403",
+        "message": "agree|这里显示审批意见内容。这里显示审批意见内容。这里显示审批意见内容。 ",
+        "createTime": null
+      },
+      "deleteReason": "string",
+      "durationInMillis": 0,
+      "endTime": "2018-08-23 06:20:17",
+      "finished": true,
+      "participant": {
+        "id": "21631475849108832",
+        "code": "wangzeyu@chamc.com.cn@25403",
+        "name": "王泽宇",
+        "org": "ORG100002274",
+        "orgName": "软件开发部",
+        "type": null
+      },
+      "procDefId": "string",
+      "startTime": "2018-08-23",
+      "taskId": "string",
+      "taskName": "string"
+    },
+    {
+      "id": "12312323",
+      "processInstanceId": "",
+      "createTime": "2018-06-29 17:41",
+      "startTime": "2018-06-29",
+      "endTime": "2018-06-29 17:41",
+      "durationInMillis": "0",
+      "dueDate": null,
+      "deleteReason": null,
+      "participant": {
+        "id": "21631480110521698",
+        "code": "miaoshipeng@chamc.com.cn@25470",
+        "name": "苗世鹏",
+        "org": "ORG100002274",
+        "orgName": "软件开发部",
+        "type": null
+      },
+      "comment": null
+    }
+  ],
+  "getUser": {
+    "selectUser" : [
+      {
+        "imageUrl": "",
+        "title": "",
+        "subTitle": ""
+      }
+    ]
+  }
+}

@@ -123,7 +123,7 @@ let devWebpackConfig = webpackMerge(baseWebpackConfig, {
     new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: 'index.html',
+      template: './index.html',
       inject: true,
     }),
     new MiniCssExtractPlugin({

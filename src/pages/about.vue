@@ -19,20 +19,19 @@
 
 <script>
 export default {
-    mounted() {
-        console.log("mounted");
-    },
     created() {
-        console.log("created");
+        console.log("AboutPage created");
     },
-    activated() {
-        console.log("activated");
-    },
-    deactivated() {
-        console.log("deactivated");
+    mounted() {
+        console.log("AboutPage mounted");
     },
     destroyed() {
-        console.log("destroyed");
+        console.log("AboutPage destroyed");
+    },
+    methods:{
+        next(){
+            
+        }
     }
 };
 </script>

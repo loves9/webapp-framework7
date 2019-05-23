@@ -28,7 +28,7 @@
     <!-- built style files will be auto injected -->
     <style>
       .statusbar-overlay {
-        background: #298CCF;
+        background: #298ccf;
       }
     </style>
   </head>
@@ -40,5 +40,15 @@
   <script src="cordova.js"></script>
   -->
     <!-- built script files will be auto injected -->
+    <script>
+      document.addEventListener("deviceready", onDeviceReady, false); //等待cordova加载
+
+      function onDeviceReady() {
+        MXSetting &&
+          typeof MXSetting.setConsoleLogEnabled === "function" &&
+          MXSetting.setConsoleLogEnabled();
+        console.log("ondeviceready-index");
+      }
+    </script>
   </body>
 </html>

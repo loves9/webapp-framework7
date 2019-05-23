@@ -21,7 +21,7 @@ import App from './App.vue';
 Framework7.use(Framework7Vue)
 
 // Init App
-new Vue({
+let globalVueObject = new Vue({
   el: '#app',
   template: '<app/>',
 
@@ -30,3 +30,5 @@ new Vue({
     app: App
   }
 });
+
+window.GlobalVueObject = globalVueObject

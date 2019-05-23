@@ -78,6 +78,9 @@ export default {
                 routes: routes
             }
         };
+    },
+    mounted(){
+        
     }
 };
 </script>
