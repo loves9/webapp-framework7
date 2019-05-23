@@ -14,11 +14,21 @@ import 'framework7/css/framework7.bundle.css';
 import IconsStyles from './style/css/icons.css';
 import AppStyles from './style/css/app.css';
 
+import '@/lib/iconfont/iconfont.css';
+
+import './style/public.less'
+
 // Import App Component
 import App from './App.vue';
 
 // Init F7 Vue Plugin
 Framework7.use(Framework7Vue)
+
+// 引入vux组件库
+// import { ToastPlugin, LoadingPlugin, TransferDom } from 'vux'
+// Vue.use(ToastPlugin)
+// Vue.use(LoadingPlugin)
+// Vue.directive('transfer-dom', TransferDom)
 
 // Init App
 let globalVueObject = new Vue({

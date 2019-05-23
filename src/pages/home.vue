@@ -23,6 +23,10 @@
             <f7-link>Left Link</f7-link>
             <f7-link>Right Link</f7-link>
         </f7-toolbar>
+
+        <!-- <h-doc-cell title="hhtitle" image="static/doc.png" subTitle="lllllll"></h-doc-cell> -->
+        <h-grid :dataSource="dataSource" @onPress="itemClick"></h-grid>
+
         <f7-block strong>
             <p>Here is your blank Framework7 app. Let's see what we have here.</p>
         </f7-block>
@@ -64,8 +68,39 @@
 </template>
 <script>
 import HttpBusinessRequest from "@/pages/api/api.js";
+import { HGrid, HDocCell } from "hrkj-vux-components";
 
 export default {
+    data() {
+        return {
+            dataSource: [
+                {
+                    name: "待办事宜",
+                    iconClass: "ic-daiban-l",
+                    fontSize: "30px",
+                    color: "#47B3E1"
+                },
+                {
+                    name: "我的请求",
+                    iconClass: "ic-wodeqingqiu-l",
+                    fontSize: "30px",
+                    color: "#FFB000"
+                },
+                {
+                    name: "已办事宜",
+                    iconClass: "ic-yiban-l",
+                    fontSize: "30px",
+                    color: "#47B3E1"
+                },
+                {
+                    name: "办结事宜",
+                    iconClass: "ic-banjie-l",
+                    fontSize: "30px",
+                    color: "#00A79F"
+                }
+            ]
+        };
+    },
     created() {
         console.log("created");
     },
@@ -83,6 +118,9 @@ export default {
         console.log("deactivated");
     },
     methods: {
+        itemClick(item) {
+            console.log(item)
+        },
         /**
          * 请求示例
          *
@@ -101,9 +139,13 @@ export default {
             // 发送请求
             request.send();
         },
-        next(){
-            this.$f7router.navigate('/about/')
+        next() {
+            this.$f7router.navigate("/about/");
         }
+    },
+    components: {
+        HGrid,
+        HDocCell
     }
 };
 </script>
