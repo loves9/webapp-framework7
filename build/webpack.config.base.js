@@ -8,7 +8,6 @@ const config = require("../config");
 
 const path = require("path");
 
-const vuxLoader = require('vux-loader')
 
 function resolvePath(dir) {
   return path.join(__dirname, "..", dir);
@@ -144,6 +143,9 @@ let webpackConfig = {
 
 module.exports = webpackConfig
 
-// module.exports = vuxLoader.merge(webpackConfig, {
-//   plugins: ['vux-ui']
+// module.exports = require('@vux/loader').merge(webpackConfig, {
+//   plugins: ['vux-ui', {
+//     name: 'less-theme',
+//     path: 'src/style/theme.less'
+//   }]
 // })

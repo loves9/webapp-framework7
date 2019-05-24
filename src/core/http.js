@@ -161,6 +161,8 @@ class BusinessRequest {
                 GlobalVueObject.$f7.dialog.close();
                 
                 // TODO: 超时
+                GlobalVueObject.$vux.toast.text("请求超时");
+
             }, 60000);
         }
     }

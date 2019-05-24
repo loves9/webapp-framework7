@@ -1,26 +1,23 @@
 const routerManager = {
-    push(url, options, { $core, $router, $routesMap }, needForResult) {
-        const Core = $core;
-        const VueRouter = $router;
-        const RoutesMap = $routesMap;
+  push(url, props, self) {
+    self.$f7router.navigate(url, {
+      props: props
+    });
+  },
 
-        VueRouter.push({ path: url, query: options })
-    },
+  pop(url, props, self) {
+    if (url == undefined) {
+      self.$f7router.back();
 
-    pop(options, { $core, $router, $options, $store }) {
-        const Core = $core;
-        const VueRouter = $router;
-        if (options == undefined) {
-            VueRouter.back();
-        }
-        else if (typeof (options) == 'number') {
-            VueRouter.go(options)
-        }
-        else {
-
-        }
-
+    } else {
+      self.$f7router.back(url, {
+        props:props
+      });
+      // self.$f7router.navigate(url, {
+      //   props: props
+      // });
     }
-}
+  }
+};
 
-export default routerManager
+export default routerManager;

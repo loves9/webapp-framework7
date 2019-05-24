@@ -19,10 +19,10 @@
                 ></f7-link>
             </f7-nav-right>
         </f7-navbar>
-        <f7-toolbar bottom>
+        <!-- <f7-toolbar bottom>
             <f7-link>Left Link</f7-link>
             <f7-link>Right Link</f7-link>
-        </f7-toolbar>
+        </f7-toolbar> -->
 
         <!-- <h-doc-cell title="hhtitle" image="static/doc.png" subTitle="lllllll"></h-doc-cell> -->
         <h-grid :dataSource="dataSource" @onPress="itemClick"></h-grid>
@@ -114,12 +114,11 @@ export default {
     BeforeIn(arg) {
         console.log("pageBeforeIn");
     },
-    deactivated() {
-        console.log("deactivated");
-    },
     methods: {
         itemClick(item) {
-            console.log(item)
+            console.log("00000");
+
+            this.easyPush('/about/', {})
         },
         /**
          * 请求示例

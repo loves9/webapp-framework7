@@ -13,6 +13,10 @@ export default [
     component: HomePage,
   },
   {
+    path: '/home/',
+    component: HomePage,
+  },
+  {
     path: '/panel-left/',
     component: PanelLeftPage,
   },

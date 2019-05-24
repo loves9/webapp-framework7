@@ -26,15 +26,9 @@ export default {
          * @param options
          * @return 调用是否成功。
          */
-        easyPop(options) {
+        easyPop(url, options) {
             if (this.$core) {
-                if (typeof options === 'string') {
-                    options = {
-                        url: options
-                    }
-                }
-                
-                this.$core.RouterManager.pop(options, this);
+                this.$core.RouterManager.pop(url, options, this);
                 return true;
             }
             return false;

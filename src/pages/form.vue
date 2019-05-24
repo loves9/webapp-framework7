@@ -87,7 +87,7 @@
                 <f7-button class="col" large fill raised>Large Fill</f7-button>
             </f7-row>
             <f7-row tag="p">
-                <f7-button class="col" large fill raised color="red">Large Red</f7-button>
+                <f7-button class="col" large fill raised color="red" @click="backHome">backHome</f7-button>
                 <f7-button class="col" large fill raised color="green">Large Green</f7-button>
             </f7-row>
         </f7-block>
@@ -95,5 +95,11 @@
 </template>
 
 <script>
-export default {};
+export default {
+    methods:{
+        backHome(){
+            this.easyPop()
+        }
+    }
+};
 </script>

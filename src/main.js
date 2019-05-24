@@ -18,6 +18,9 @@ import '@/lib/iconfont/iconfont.css';
 
 import './style/public.less'
 
+import mixins from '@/common/mixins'
+import core from "@/core";
+
 // Import App Component
 import App from './App.vue';
 
@@ -30,6 +33,10 @@ Framework7.use(Framework7Vue)
 // Vue.use(LoadingPlugin)
 // Vue.directive('transfer-dom', TransferDom)
 
+// 注册全局方法
+Vue.mixin(mixins)
+
+Vue.prototype.$core = core
 // Init App
 let globalVueObject = new Vue({
   el: '#app',
