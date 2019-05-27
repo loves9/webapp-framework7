@@ -96,9 +96,10 @@
 
 <script>
 export default {
-    methods:{
-        backHome(){
-            this.easyPop()
+    mounted() {},
+    methods: {
+        backHome() {
+            this.easyPop('/')
         }
     }
 };

@@ -46,5 +46,9 @@
 </template>
 
 <script>
-export default {};
+export default {
+    mounted(){
+        console.log(this.$f7route.params)
+    }
+};
 </script>

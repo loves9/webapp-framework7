@@ -16,6 +16,7 @@
         </f7-block>
 
         <f7-button fill raised @click="next">确定</f7-button>
+
     </f7-page>
 </template>
 
@@ -32,7 +33,10 @@ export default {
     },
     methods: {
         next() {
-            this.easyPush('/form/')
+            this.easyPush("/form/", {
+                name: "About",
+                index: 2
+            });
         }
     }
 };

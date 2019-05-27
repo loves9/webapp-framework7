@@ -161,7 +161,12 @@ class BusinessRequest {
                 GlobalVueObject.$f7.dialog.close();
                 
                 // TODO: 超时
-                GlobalVueObject.$vux.toast.text("请求超时");
+                // GlobalVueObject.$vux.toast.text("请求超时");
+                this.$f7.toast.create({
+                    text: "请求超时",
+                    position: "center",
+                    closeTimeout: 2000
+                }).open();
 
             }, 60000);
         }
@@ -264,8 +269,6 @@ class BusinessRequest {
             if (process.env.NODE_ENV == 'development') {
                 // GlobalVueObject.$f7.dialog.preloader('MXCommon未初始化，正在调用axios')
             }
-
-            return;
             
             axios({
                 method: _this.config.method,
@@ -286,9 +289,9 @@ class BusinessRequest {
                 GlobalVueObject.$f7.dialog.close();
 
                 if (_this.config.autoToast) {
-                    GlobalVueObject.$vux.toast.show({
-                        text: error.data
-                    })
+                    // GlobalVueObject.$vux.toast.show({
+                    //     text: error.data
+                    // })
                 }
                 _this.error(error.data, error.status, '')
                 _this.complete()

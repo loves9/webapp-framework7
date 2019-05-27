@@ -38,21 +38,8 @@ export default {
          * 获取页面传递的参数
          */
         easyGetParams() {
-            if (this.$router) {
-                return this.$route.query
-                // return new Promise((resolve, reject) => {
-                //     let query = this.$route.query;
-                //     if (Object.keys(query).length !== 0) {
-                //         resolve(query);
-                //     } else {
-                //         let params = this.$route.params;
-                //         if (Object.keys(params).length !== 0) {
-                //             resolve(params);
-                //         } else {
-                //             resolve({});
-                //         }
-                //     }
-                // });
+            if (this.$f7route) {
+                return this.$f7route.query
             }
 
             return {}
@@ -74,6 +61,8 @@ export default {
 
                 callBack()
             }
-        }
+        },
+
+        
     }
 }

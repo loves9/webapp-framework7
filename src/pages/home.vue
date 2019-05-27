@@ -1,5 +1,5 @@
 <template>
-    <f7-page>
+    <f7-page :page:mounted="pmounted">
         <f7-navbar bg-color="blue">
             <f7-nav-left>
                 <f7-link
@@ -22,7 +22,7 @@
         <!-- <f7-toolbar bottom>
             <f7-link>Left Link</f7-link>
             <f7-link>Right Link</f7-link>
-        </f7-toolbar> -->
+        </f7-toolbar>-->
 
         <!-- <h-doc-cell title="hhtitle" image="static/doc.png" subTitle="lllllll"></h-doc-cell> -->
         <h-grid :dataSource="dataSource" @onPress="itemClick"></h-grid>
@@ -35,28 +35,7 @@
             <f7-list-item link="#" title="About" @click="next"></f7-list-item>
             <f7-list-item link="/form/" title="Form"></f7-list-item>
         </f7-list>
-        <f7-block-title>Modals</f7-block-title>
-        <f7-block strong>
-            <f7-row>
-                <f7-col width="50">
-                    <f7-button fill raised popup-open="#popup">Popup</f7-button>
-                </f7-col>
-                <f7-col width="50">
-                    <f7-button fill raised login-screen-open="#login-screen">Login Screen</f7-button>
-                </f7-col>
-            </f7-row>
-        </f7-block>
-        <f7-block-title>Panels</f7-block-title>
-        <f7-block strong>
-            <f7-row>
-                <f7-col width="50">
-                    <f7-button fill raised panel-open="left">Left Panel</f7-button>
-                </f7-col>
-                <f7-col width="50">
-                    <f7-button fill raised panel-open="right">Right Panel</f7-button>
-                </f7-col>
-            </f7-row>
-        </f7-block>
+
         <f7-list>
             <f7-list-item
                 link="/dynamic-route/blog/45/post/125/?foo=bar#about"
@@ -102,23 +81,23 @@ export default {
         };
     },
     created() {
-        console.log("created");
+        console.log("Home created");
     },
     mounted() {
-        console.log("mounted");
+        console.log("Home mounted");
         // this.sendRequest();
     },
     destroyed() {
-        console.log("destroyed");
-    },
-    BeforeIn(arg) {
-        console.log("pageBeforeIn");
+        console.log("Home destroyed");
     },
     methods: {
+        pmounted() {
+            console.log("pppmmm");
+        },
         itemClick(item) {
             console.log("00000");
 
-            this.easyPush('/about/', {})
+            this.easyPush("/about/", {});
         },
         /**
          * 请求示例
@@ -139,7 +118,27 @@ export default {
             request.send();
         },
         next() {
-            this.$f7router.navigate("/about/");
+            this.easyPush("/about/", {
+                foo: 'foooooo',
+                index: 1
+            });
+            // this.$f7router.navigate("/about/", {
+            //     props: {
+            //         foo: "bar",
+            //         bar: true
+            //     }
+            // });
+
+            // this.$f7router.navigate({
+            //     name: 'about',
+            //     params: {
+            //         params: 'hhhhh',
+            //         index: 100
+            //     },
+            //     query: {
+            //         query: 'qqqqq'
+            //     }
+            // });
         }
     },
     components: {
