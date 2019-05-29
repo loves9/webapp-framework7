@@ -2,6 +2,7 @@ const webpack = require("webpack");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 const config = require("../config");
@@ -48,10 +49,16 @@ let webpackConfig = {
     host: process.env.HOST || config.dev.host,
     port: process.env.PORT || config.dev.port,
     open: config.dev.autoOpenBrowser,
+    // overlay: config.dev.errorOverlay ? {
+    //   warnings: false,
+    //   errors: true,
+    // } : false,
     compress: true,
+    proxy: config.dev.proxyTable,
+    quiet: true, // necessary for FriendlyErrorsPlugin
     // contentBase: '/www/',
     watchOptions: {
-      poll: true
+      poll: config.dev.poll,
     }
   },
   module: {
@@ -59,6 +66,7 @@ let webpackConfig = {
       {
         test: /\.js$/,
         use: "babel-loader",
+        exclude: /node_modules/,
         include: [
           resolvePath("src"),
           resolvePath("node_modules/framework7"),
@@ -114,17 +122,17 @@ let webpackConfig = {
     // new webpack.DefinePlugin({
     //     "process.env": JSON.stringify("development")
     // }),
-    // new webpack.HotModuleReplacementPlugin(),
-    // new webpack.NamedModulesPlugin(),
-    // new VueLoaderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
+    new VueLoaderPlugin(),
     // new HtmlWebpackPlugin({
     //     filename: "./index.html",
     //     template: "./index.html",
     //     inject: true
     // }),
-    // new MiniCssExtractPlugin({
-    //     filename: "app.css"
-    // }),
+    new MiniCssExtractPlugin({
+        filename: "app.css"
+    }),
     // new CopyWebpackPlugin([
     //     {
     //         from: resolvePath("static"),

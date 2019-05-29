@@ -21,6 +21,8 @@
     "ua": "string",     // 浏览器 (?)
     "uid": "string"     // 系统赋予的账号或id，必要时MD5加密(?)
 }*/
+import  NativeApi from '@/core/native_plugin.js'
+
 export default {
     getNowFormatDate() {
         var date = new Date();

@@ -1,3 +1,4 @@
+const utils = require('./utils');
 const webpack = require('webpack');
 const webpackMerge = require('webpack-merge')
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -118,17 +119,17 @@ let devWebpackConfig = webpackMerge(baseWebpackConfig, {
     new webpack.DefinePlugin({
       'process.env': require('../config/dev.env') //JSON.stringify('development'),
     }),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin(),
-    new VueLoaderPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
+    // new webpack.NamedModulesPlugin(),
+    // new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './index.html',
       inject: true,
     }),
-    new MiniCssExtractPlugin({
-      filename: 'app.css'
-    }),
+    // new MiniCssExtractPlugin({
+    //   filename: 'app.css'
+    // }),
     // new CopyWebpackPlugin([{
     //   from: resolvePath('static'),
     //   to: resolvePath('www/static'),
@@ -144,30 +145,30 @@ let devWebpackConfig = webpackMerge(baseWebpackConfig, {
 });
 
 
-module.exports = devWebpackConfig
+// module.exports = devWebpackConfig
 
-// module.exports = new Promise((resolve, reject) => {
-//   portfinder.basePort = process.env.PORT || config.dev.port
-//   portfinder.getPort((err, port) => {
-//     if (err) {
-//       reject(err)
-//     } else {
-//       // publish the new Port, necessary for e2e tests
-//       process.env.PORT = port
-//       // add port to devServer config
-//       devWebpackConfig.devServer.port = port
+module.exports = new Promise((resolve, reject) => {
+  portfinder.basePort = process.env.PORT || config.dev.port
+  portfinder.getPort((err, port) => {
+    if (err) {
+      reject(err)
+    } else {
+      // publish the new Port, necessary for e2e tests
+      process.env.PORT = port
+      // add port to devServer config
+      devWebpackConfig.devServer.port = port
 
-//       // Add FriendlyErrorsPlugin
-//       devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
-//         compilationSuccessInfo: {
-//           messages: [`Your application is running here: http://localhost:${port}`],
-//         },
-//         onErrors: config.dev.notifyOnErrors
-//         ? utils.createNotifierCallback()
-//         : undefined
-//       }))
+      // Add FriendlyErrorsPlugin
+      devWebpackConfig.plugins.push(new FriendlyErrorsPlugin({
+        compilationSuccessInfo: {
+          messages: [`Your application is running here: http://localhost:${port}`],
+        },
+        onErrors: config.dev.notifyOnErrors
+        ? utils.createNotifierCallback()
+        : undefined
+      }))
 
-//       resolve(devWebpackConfig)
-//     }
-//   })
-// })
+      resolve(devWebpackConfig)
+    }
+  })
+})

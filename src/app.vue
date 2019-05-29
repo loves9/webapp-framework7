@@ -77,8 +77,8 @@ export default {
                 // App routes
                 routes: routes,
                 view: {
-                    stackPages: true
-                    // pushState: true
+                    stackPages: true,
+                    pushState: true
                 },
                 on: {
                     // each object key means same name event handler

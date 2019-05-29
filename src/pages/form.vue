@@ -1,9 +1,9 @@
 <template>
     <f7-page>
-        <f7-navbar>
+        <!-- <f7-navbar>
             <f7-nav-left back-link color="white"></f7-nav-left>
             <f7-nav-title>Form</f7-nav-title>
-        </f7-navbar>
+        </f7-navbar> -->
         <f7-block-title>Form Example</f7-block-title>
         <f7-list form>
             <f7-list-input label="Name" type="text" placeholder="Name"/>

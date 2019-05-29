@@ -1,9 +1,9 @@
 <template>
     <f7-page>
-        <f7-navbar>
+        <!-- <f7-navbar>
             <f7-nav-left back-link color="white"></f7-nav-left>
             <f7-nav-title>About</f7-nav-title>
-        </f7-navbar>
+        </f7-navbar> -->
         <f7-block-title>About My App</f7-block-title>
         <f7-block strong>
             <p>Here is About page!</p>

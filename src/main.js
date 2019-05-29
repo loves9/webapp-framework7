@@ -21,6 +21,9 @@ import './style/public.less'
 import mixins from '@/common/mixins'
 import core from "@/core";
 
+import  Native from '@/core/native_plugin.js'
+window.NativeApi = Native
+
 // Import App Component
 import App from './App.vue';
 
@@ -28,10 +31,10 @@ import App from './App.vue';
 Framework7.use(Framework7Vue)
 
 // 引入vux组件库
-// import { ToastPlugin, LoadingPlugin, TransferDom } from 'vux'
-// Vue.use(ToastPlugin)
-// Vue.use(LoadingPlugin)
+// import { TransferDom } from 'vux'
 // Vue.directive('transfer-dom', TransferDom)
+
+
 
 // 注册全局方法
 Vue.mixin(mixins)
