@@ -23,9 +23,7 @@ let prodWebpackConfig = webpackMerge(baseWebpackConfig, {
     }),
     new UglifyJsPlugin({
       uglifyOptions: {
-        compress: {
-          warnings: false
-        }
+        warnings: false
       },
       sourceMap: true,
       parallel: true
@@ -38,6 +36,8 @@ let prodWebpackConfig = webpackMerge(baseWebpackConfig, {
     }),
     // new webpack.HotModuleReplacementPlugin(),
     // new webpack.NamedModulesPlugin(),
+    // new VueLoaderPlugin(),
+
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './index.html',
@@ -52,7 +52,11 @@ let prodWebpackConfig = webpackMerge(baseWebpackConfig, {
     new webpack.optimize.ModuleConcatenationPlugin(),
     // new MiniCssExtractPlugin({
     //   filename: 'app.css'
-    // })
+    // }),
+    // new CopyWebpackPlugin([{
+    //   from: resolvePath('static'),
+    //   to: resolvePath('www/static'),
+    // }])
   ]
 });
 

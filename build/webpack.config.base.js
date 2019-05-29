@@ -49,10 +49,10 @@ let webpackConfig = {
     host: process.env.HOST || config.dev.host,
     port: process.env.PORT || config.dev.port,
     open: config.dev.autoOpenBrowser,
-    // overlay: config.dev.errorOverlay ? {
-    //   warnings: false,
-    //   errors: true,
-    // } : false,
+    overlay: config.dev.errorOverlay ? {
+      warnings: false,
+      errors: true,
+    } : false,
     compress: true,
     proxy: config.dev.proxyTable,
     quiet: true, // necessary for FriendlyErrorsPlugin
@@ -66,7 +66,7 @@ let webpackConfig = {
       {
         test: /\.js$/,
         use: "babel-loader",
-        exclude: /node_modules/,
+        // exclude: /node_modules/,
         include: [
           resolvePath("src"),
           resolvePath("node_modules/framework7"),

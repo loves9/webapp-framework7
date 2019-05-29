@@ -2,14 +2,24 @@ module.exports = {
   "presets": [
     ["@babel/preset-env", {
       "modules": false,
+      // "useBuiltIns": "entry",
       "targets": {
-        "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+        "browsers": ["> 1%", "last 2 versions", "not ie <= 8"],
+        
       }
     }],
   ],
   "plugins": [
     "transform-vue-jsx",
     "@babel/plugin-transform-runtime",
+
+    // Stage 1
+    // "@babel/plugin-proposal-export-default-from",
+    // "@babel/plugin-proposal-logical-assignment-operators",
+    // ["@babel/plugin-proposal-optional-chaining", { "loose": false }],
+    // ["@babel/plugin-proposal-pipeline-operator", { "proposal": "minimal" }],
+    // ["@babel/plugin-proposal-nullish-coalescing-operator", { "loose": false }],
+    // "@babel/plugin-proposal-do-expressions",
 
     // Stage 2
     ["@babel/plugin-proposal-decorators", { "legacy": true }],

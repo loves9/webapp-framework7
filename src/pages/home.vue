@@ -550,6 +550,7 @@ export default {
     // }
 };
 </script>
+
 <style lang='less' scoped>
 // @import "~vux/src/styles/reset.less";
 // @import "~vux/src/styles/1px.less";

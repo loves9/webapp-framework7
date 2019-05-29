@@ -7,7 +7,7 @@ const config = require('./webpack.config.prod.js');
 const spinner = ora('building for production...')
 spinner.start();
 
-rm('./www/', (removeErr) => {
+rm('./dist/', (removeErr) => {
   if (removeErr) throw removeErr;
 
   webpack(config, (err, stats) => {
