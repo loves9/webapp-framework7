@@ -70,6 +70,8 @@ class BusinessRequest {
         url: '',
         parameter: {},
 
+        requestTimeout: true,
+
         mask: true,
 
         /**
@@ -162,12 +164,13 @@ class BusinessRequest {
                 
                 // TODO: 超时
                 // GlobalVueObject.$vux.toast.text("请求超时");
-                this.$f7.toast.create({
-                    text: "请求超时",
-                    position: "center",
-                    closeTimeout: 2000
-                }).open();
-
+                if(this.requestTimeout){
+                    GlobalVueObject.$f7.toast.create({
+                        text: "请求超时",
+                        position: "center",
+                        closeTimeout: 2000
+                    }).open();
+                }
             }, 60000);
         }
     }
@@ -226,6 +229,8 @@ class BusinessRequest {
                     }
 
                     _this.complete()
+
+                    _this.requestTimeout = false
                 },
                 success: function (data, status, xhr) {
                     GlobalVueObject.$f7.dialog.close();

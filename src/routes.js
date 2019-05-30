@@ -3,7 +3,7 @@ import AboutPage from './pages/About.vue';
 import FormPage from './pages/Form.vue';
 import DynamicRoutePage from './pages/dynamic-route.vue';
 import NotFoundPage from './pages/not-found.vue';
-// import DetailPage from './pages/Detail.vue';
+import DetailPage from './pages/Detail.vue';
 
 export default [
   {
@@ -17,11 +17,11 @@ export default [
     path: '/about/',
     component: AboutPage
   },
-  // {
-  //   name: '/detail/',
-  //   path: '/detail/',
-  //   component: DetailPage
-  // },
+  {
+    name: '/detail/',
+    path: '/detail/',
+    component: DetailPage
+  },
   {
     name: '/form/',
     path: '/form/',

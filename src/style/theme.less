@@ -396,14 +396,6 @@
 @group-footer-title-margin-top: .3em;
 @group-footer-title-margin-bottom: .77em;
 
-/**
-* toast
-*/
-@toast-content-font-size: 16px;
-@toast-top: 180px;
-@toast-position-top-offset: 10px;
-@toast-position-bottom-offset: 10px;
-@toast-z-index: 5001;
 
 /**
 * icon
@@ -447,38 +439,16 @@
 * en: background color
 * zh-CN: 背景颜色
 */
-@calendar-bg-color: #fff;
-/**
-* en: size of date cell
-* zh-CN: 日期单元格尺寸大小
-*/
-@calendar-each-date-item-size: 26px;
-/**
-* en: line height of date cell
-* zh-CN: 日期单元格的行高
-*/
-@calendar-each-date-item-line-height: 25px;
-/**
-* en: text color of header
-* zh-CN: 头部的文本颜色
-*/
-@calendar-header-day-item-color: #000;
+
+
 
 /**
-* week-calendar
+* vux 定制
+*
 */
-@week-calendar-bg: #fff;
-@week-calendar-each-date-item-size: 26px;
-@week-calendar-each-date-item-line-height: 25px;
-@week-calendar-each-date-item-color: #444;
-@week-calendar-selected-item-bg-color: @theme-color;
-@week-calendar-selected-item-text-color: #fff;
-@week-calendar-dot-color: @theme-color;
-@week-calendar-header-day-item-color: #000;
-
-/**
-* search
-*/
-@search-cancel-font-color: @theme-color;
-@search-bg-color: #EFEFF4;
-@search-placeholder-font-color: #9B9B9B;
+.vux-tab .vux-tab-item.vux-tab-selected {
+   color: @theme-color !important;
+}
+.vux-tab-ink-bar {
+   background-color: @theme-color !important;
+}

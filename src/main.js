@@ -14,8 +14,9 @@ import 'framework7/css/framework7.bundle.css';
 import IconsStyles from './style/css/icons.css';
 import AppStyles from './style/css/app.css';
 
-import('@/lib/iconfont/iconfont.css')
-import('./style/public.less')
+import '@/lib/iconfont/iconfont.css'
+import './style/public.less'
+import './style/theme.less'
 
 import mixins from '@/common/mixins'
 import core from "@/core";

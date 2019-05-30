@@ -3,7 +3,8 @@
         <div v-for="(value,key,index) in attachmentList" :key="index" class="attachmentBox">
             <div class="title_cls">{{key}}</div>
             <div class="attachmentList" v-for="(item,index1) in value" :key="index1" @click="viewAttachment(item)">
-                <span class="iconfont" :class="resolveClass(item.docType)"></span>
+                <i class="iconfont" :class="resolveClass(item.docType)"></i>
+                <!-- <i class="iconfont ic-txt-fang-f"></i> -->
                 <div class="fileTitle">
                     <p class="p1">{{processName(item.docName)}}</p>
                     <p class="p2">{{item.docSize | bytesToSize}}</p>
@@ -14,7 +15,7 @@
 </template>
 
 <script>
-import { AlertModule,LoadingPlugin } from "vux";
+// import { AlertModule,LoadingPlugin } from "vux";
 export default {
     data(){
         return {
@@ -22,7 +23,7 @@ export default {
         };
     },
     components:{
-        AlertModule,LoadingPlugin
+        // AlertModule,LoadingPlugin
     },
     props: {
         attachmentList:null,
@@ -67,13 +68,13 @@ export default {
 
             if(item.docShow === "是"){
                 if(item.docSize === null){
-                    AlertModule.show({
-                        title: '',
-                        content: '文档为空',
-                    })
-                    setTimeout(() => {
-                        AlertModule.hide()
-                    }, 2000)
+                    // AlertModule.show({
+                    //     title: '',
+                    //     content: '文档为空',
+                    // })
+                    // setTimeout(() => {
+                    //     AlertModule.hide()
+                    // }, 2000)
                 }else{
                     if(this.attachmentDisab){
                         this.attachmentDisab = false;
@@ -85,13 +86,13 @@ export default {
                     }
                 }
             }else{
-                AlertModule.show({
-                    title: '',
-                    content: '其他系统上送的会议议案不可在线预览',
-                })
-                setTimeout(() => {
-                    AlertModule.hide()
-                }, 2000)
+                // AlertModule.show({
+                //     title: '',
+                //     content: '其他系统上送的会议议案不可在线预览',
+                // })
+                // setTimeout(() => {
+                //     AlertModule.hide()
+                // }, 2000)
             }
         },
         viewDoc: function(FileId, FileName) {
@@ -130,19 +131,18 @@ export default {
                         }
                     },
                     error: function (data, status, xhr) {
-                        AlertModule.show({
-                            title: '',
-                            content: JSON.stringify(data),
-                        })
-                        setTimeout(() => {
-                            AlertModule.hide()
-                        }, 2000)
+                        // AlertModule.show({
+                        //     title: '',
+                        //     content: JSON.stringify(data),
+                        // })
+                        // setTimeout(() => {
+                        //     AlertModule.hide()
+                        // }, 2000)
                     }
                 })
             }
 
             if (isiOS) {
-                console.log(iosurl, 'ssss')
                 window.open(iosurl, "_blank");
                _this.attachmentDisab = true;
             }

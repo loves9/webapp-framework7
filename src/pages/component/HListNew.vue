@@ -28,7 +28,7 @@ export default {
     },
     methods:{
         goDetail(item) {
-            this.$emit("HREVENT_itemClick", item);
+            this.$emit("cellClick", item);
         }
     }
 }
