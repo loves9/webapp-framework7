@@ -1,68 +1,139 @@
 export default {
-    methods: {
-        /**
-         * 设置页面标题
-         *
-         * @param {string} title
-         */
-        setTitle(title) {
-            MXWebui.setWebViewTitle(title);
+  methods: {
+    /**
+     * 设置页面标题
+     *
+     * @param {string} title
+     */
+    setTitle(title) {
+      MXWebui.setWebViewTitle(title);
+    },
 
-        },
+    /**
+     * 页面push方法
+     * @param url
+     * @param options
+     */
+    easyPush(url, options) {
+      if (this.$core) {
+        this.$core.RouterManager.push(url, options, this);
+      }
+    },
 
-        /**
-         * 页面push方法
-         * @param url
-         * @param options
-         */
-        easyPush(url, options) {
-            if (this.$core) {
-                this.$core.RouterManager.push(url, options, this)
+    /**
+     * 页面pop方法
+     * @param options
+     * @return 调用是否成功。
+     */
+    easyPop(url, options) {
+      if (this.$core) {
+        this.$core.RouterManager.pop(url, options, this);
+        return true;
+      }
+      return false;
+    },
+
+    /**
+     * 获取页面传递的参数
+     */
+    easyGetParams() {
+      if (this.$f7route) {
+        return this.$f7route.query;
+      }
+
+      return {};
+    },
+
+    /**
+     * 设置 MX cordova
+     *
+     * @param {*} callBack 回调函数
+     */
+    setDeviceReady(callBack) {
+      document.addEventListener("deviceready", onDeviceReady, false); // 等待cordova加载
+
+      function onDeviceReady() {
+        MXSetting &&
+          typeof MXSetting.setConsoleLogEnabled === "function" &&
+          MXSetting.setConsoleLogEnabled();
+        console.log("ondeviceready-mixin");
+
+        callBack();
+      }
+    },
+
+    /**
+     * frameworkf7 toast
+     *
+     * @param {*} message
+     */
+    HRToast(message, icon) {
+      if (icon) {
+        // material-icons f7-icons
+        this.$f7.toast
+          .create({
+            icon: '<i class="material-icons">' + icon + "</i>",
+            text: message,
+            position: "center",
+            closeTimeout: 2000
+          })
+          .open();
+      } else {
+        this.$f7.toast
+          .create({
+            text: message,
+            position: "center",
+            closeTimeout: 2000
+          })
+          .open();
+      }
+    },
+
+    /**
+     * ActionSheet
+     *
+     * @param {*} buttonArray 按钮字符串数组
+     * @param {*} callBack 回调函数
+     */
+    HRActionSheet(buttonArray, callBack) {
+      var buttons = [];
+      for (const key in buttonArray) {
+        if (buttonArray.hasOwnProperty(key)) {
+          const element = buttonArray[key];
+
+          var item = {
+            text: element,
+            onClick: function() {
+              callBack({ text: element, index: key });
             }
-        },
+          };
 
-        /**
-         * 页面pop方法
-         * @param options
-         * @return 调用是否成功。
-         */
-        easyPop(url, options) {
-            if (this.$core) {
-                this.$core.RouterManager.pop(url, options, this);
-                return true;
-            }
-            return false;
-        },
+          buttons.push(item);
+        }
+      }
 
-        /**
-         * 获取页面传递的参数
-         */
-        easyGetParams() {
-            if (this.$f7route) {
-                return this.$f7route.query
-            }
+      const self = this;
+      const app = self.$f7;
+      if (!self.actionsToPopover) {
+        self.actionsToPopover = app.actions.create({
+          buttons: [
+            buttons,
+            [
+              {
+                text: "取消",
+                onClick: function() {
+                  callBack({ text: "取消", index: -1 });
+                }
+              }
+            ]
+          ],
+          // Need to specify popover target
+          targetEl: self.$el.querySelector(".app")
+        });
+      }
 
-            return {}
-        },
-
-        /**
-         * 设置 MX cordova
-         *
-         * @param {*} callBack 回调函数
-         */
-        setDeviceReady(callBack) {
-            document.addEventListener("deviceready", onDeviceReady, false); //等待cordova加载
-
-            function onDeviceReady() {
-                MXSetting &&
-                    typeof MXSetting.setConsoleLogEnabled === 'function' &&
-                    MXSetting.setConsoleLogEnabled();
-                console.log('ondeviceready-mixin');
-
-                callBack()
-            }
-        },
-
-        
+      // Open
+      self.actionsToPopover.open();
     }
-}
+  }
+};

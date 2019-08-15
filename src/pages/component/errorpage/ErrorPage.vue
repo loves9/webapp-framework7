@@ -19,52 +19,52 @@
 
 <script>
 import {
-    XButton
-} from "vux";
+  XButton
+} from 'vux'
 export default {
-    props: {
-        type: {
-            type: String,
-            default: 'system'
-        },
-        buttonTitle: {
-            type: String,
-            default: '确定'
-        }
+  props: {
+    type: {
+      type: String,
+      default: 'system'
     },
-    data() {
-        return {
-            labelText_one: '哎呀，出错了…',
-            labelText_two: '由于系统原因给您造成不便，',
-            labelText_three: '请联系技术支持协助解决。',
-            imagePath: require('./images/error.png')
-        };
-    },
-    mounted() {
-        switch(this.type){
-            case 'system':
-
-            break;
-            case 'upgrade':
-            this.labelText_one = '精彩内容，稍后呈现…'
-            this.labelText_two = '由于目前系统升级中，'
-            this.labelText_three = '给您造成不便，敬请谅解。'
-            this.imagePath = require('./images/upgrade.png')
-            break;
-        }
-    },
-    computed: {
-
-    },
-    methods: {
-        errorButtonClick(){
-            this.$emit('HREVENT_errorButtonClick')
-        }
-    },
-    components: {
-        XButton
+    buttonTitle: {
+      type: String,
+      default: '确定'
     }
-};
+  },
+  data () {
+    return {
+      labelText_one: '哎呀，出错了…',
+      labelText_two: '由于系统原因给您造成不便，',
+      labelText_three: '请联系技术支持协助解决。',
+      imagePath: require('./images/error.png')
+    }
+  },
+  mounted () {
+    switch (this.type) {
+      case 'system':
+
+        break
+      case 'upgrade':
+        this.labelText_one = '精彩内容，稍后呈现…'
+        this.labelText_two = '由于目前系统升级中，'
+        this.labelText_three = '给您造成不便，敬请谅解。'
+        this.imagePath = require('./images/upgrade.png')
+        break
+    }
+  },
+  computed: {
+
+  },
+  methods: {
+    errorButtonClick () {
+      this.$emit('HREVENT_errorButtonClick')
+    }
+  },
+  components: {
+    XButton
+  }
+}
 </script>
 
 <style lang="less">

@@ -47,8 +47,8 @@
 
 <script>
 export default {
-    mounted(){
-        
-    }
-};
+  mounted () {
+
+  }
+}
 </script>

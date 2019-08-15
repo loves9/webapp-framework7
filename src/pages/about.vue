@@ -22,22 +22,22 @@
 
 <script>
 export default {
-    created() {
-        console.log("AboutPage created");
-    },
-    mounted() {
-        console.log("AboutPage mounted");
-    },
-    destroyed() {
-        console.log("AboutPage destroyed");
-    },
-    methods: {
-        next() {
-            this.easyPush("/form/", {
-                name: "About",
-                index: 2
-            });
-        }
+  created () {
+    console.log('AboutPage created')
+  },
+  mounted () {
+    console.log('AboutPage mounted')
+  },
+  destroyed () {
+    console.log('AboutPage destroyed')
+  },
+  methods: {
+    next () {
+      this.easyPush('/form/', {
+        name: 'About',
+        index: 2
+      })
     }
-};
+  }
+}
 </script>
