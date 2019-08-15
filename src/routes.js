@@ -1,8 +1,8 @@
 import HomePage from './pages/Home.vue'
 import AboutPage from './pages/About.vue'
 import FormPage from './pages/Form.vue'
-import DynamicRoutePage from './pages/dynamic-route.vue'
-import NotFoundPage from './pages/not-found.vue'
+import DynamicRoutePage from './pages/DynamicRoute.vue'
+import NotFoundPage from './pages/NotFound.vue'
 
 export default [
   // {
