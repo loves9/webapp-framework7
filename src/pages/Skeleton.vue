@@ -46,7 +46,6 @@
 
 <script>
 export default {
-  created() {},
   mounted() {},
   destroyed() {},
   methods: {
