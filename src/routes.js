@@ -1,6 +1,6 @@
-import HomePage from './pages/Home.vue'
-import AboutPage from './pages/About.vue'
-import FormPage from './pages/Form.vue'
+import HomePage from './pages/HomeScreen.vue'
+import AboutPage from './pages/AboutScreen.vue'
+import FormPage from './pages/FormScreen.vue'
 import DynamicRoutePage from './pages/DynamicRoute.vue'
 import NotFoundPage from './pages/NotFound.vue'
 
