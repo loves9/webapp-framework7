@@ -6,7 +6,7 @@
     </f7-navbar>-->
     <f7-block-title>HOME</f7-block-title>
 
-
+    <!-- <img :src="image" alt style="width:100vw; background-color:red" /> -->
 
     <f7-button fill raised @click="next">下一页</f7-button>
   </f7-page>
@@ -14,6 +14,11 @@
 
 <script>
 export default {
+  data() {
+    return {
+      image: require("@/assets/logo.png")
+    };
+  },
   mounted() {
     console.log("HomePage mounted");
   },
@@ -26,6 +31,12 @@ export default {
         name: "About",
         index: 2
       });
+
+      this.imageCapture();
+    },
+
+    imageCapture() {
+
     }
   }
 };

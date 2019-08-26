@@ -15,7 +15,7 @@
 // Import Routes
 import routes from "./routes.js";
 
-import HomeView from './pages/Home.vue'
+import HomeView from './pages/HomeScreen.vue'
 
 export default {
   components: {

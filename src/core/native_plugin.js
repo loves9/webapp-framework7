@@ -19,6 +19,30 @@ function MXOnready(callBack) {
   }
 }
 export default {
+  camera: {
+    takePicture(callBack){
+      function onSuccess(imageData) {
+        var imageBase64 = "data:image/jpeg;base64," + imageData;
+        callBack({
+          result: 0,
+          data: imageBase64
+        })
+      }
+
+      function onFail(message) {
+        callBack({
+          result: 1,
+          data: "Failed because: " + message
+        })
+      }
+
+      navigator.camera.getPicture(onSuccess, onFail, {
+        quality: 25,
+        destinationType: Camera.DestinationType.DATA_URL
+      });
+    }
+  },
+
   dialog: {
     /**
      * 调用原生confirm
