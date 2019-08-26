@@ -2,11 +2,21 @@
 .navbar {
   background-color: #298ccf;
   color: #ffffff;
-
 }
+
+.color-red {
+  --f7-theme-color: #EF5350;
+}
+
+/* .input-dropdown-wrap:before, .input-dropdown:before {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+} */
 
 :root {
   --f7-theme-color: #298ccf;
+  --f7-color-red: #EF5350;
   /* --f7-theme-color-tint: #298ccf; */
 
   /* Preloader */
@@ -20,11 +30,18 @@
   --f7-button-font-weight: 600;
 
   /* List Item */
-  /* --f7-list-item-min-height: 48px; */
+  --f7-list-item-title-font-size: 16px;
+  --f7-list-item-title-font-weight: 400;
+  --f7-list-item-title-text-color: #333333;
+
+  /* Inputs/Form Inputs */
+  --f7-input-outline-height: 30px;
+  --f7-input-outline-border-color: #C0C4CC;
 
   /* Skeleton */
   --f7-skeleton-color: #ccc;
-  
+
+
 }
 
 .ios {
@@ -51,4 +68,21 @@
   /* List View */
   --f7-list-margin-vertical: 10px;
 
+  /* Inputs/Form Inputs */
+  --f7-input-text-color: #666666;
+  --f7-label-text-color: #333333;
+  --f7-input-font-size: 16px;
+  --f7-inline-label-font-size: 16px;
+  --f7-input-height: 48px;
+
+  --f7-input-outline-height: 30px;
+  --f7-input-outline-border-color: #C0C4CC;
+
+  /* Picker */
+  --f7-picker-item-selected-text-color: #333333;
+
+
+  /* Grid */
+  --f7-grid-gap: 1px;
+  
 }

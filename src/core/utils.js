@@ -99,5 +99,38 @@ export default {
     }
     a[len] = name.substr(-1);
     return a.join("");
+  },
+
+  /**
+   * 日期格式化
+   * 
+   * @param {*} dateObject Date对象
+   * @param {*} format 格式 如 'yyyy-MM-dd'
+   * @returns 日期字符串
+   */
+  dateFormat(dateObject, format) {
+    var o = {
+      "M+": dateObject.getMonth() + 1, //month
+      "d+": dateObject.getDate(), //day
+      "h+": dateObject.getHours(), //hour
+      "m+": dateObject.getMinutes(), //minute
+      "s+": dateObject.getSeconds(), //second
+      "q+": Math.floor((dateObject.getMonth() + 3) / 3), //quarter
+      S: dateObject.getMilliseconds() //millisecond
+    };
+    if (/(y+)/.test(format))
+      format = format.replace(
+        RegExp.$1,
+        (dateObject.getFullYear() + "").substr(4 - RegExp.$1.length)
+      );
+    for (var k in o)
+      if (new RegExp("(" + k + ")").test(format))
+        format = format.replace(
+          RegExp.$1,
+          RegExp.$1.length == 1
+            ? o[k]
+            : ("00" + o[k]).substr(("" + o[k]).length)
+        );
+    return format;
   }
 };
