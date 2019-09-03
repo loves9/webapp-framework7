@@ -3,7 +3,7 @@
     <!-- <f7-navbar>
       <f7-nav-left back-link color="white"></f7-nav-left>
       <f7-nav-title>About</f7-nav-title>
-    </f7-navbar> -->
+    </f7-navbar>-->
     <f7-block-title>HOME</f7-block-title>
 
     <!-- <img :src="image" alt style="width:100vw; background-color:red" /> -->
@@ -35,10 +35,16 @@ export default {
 
       this.imageCapture();
     },
-    test(){
-      this.HRActionSheet(['11', '22'], (obj)=>{
-        console.log(obj)
-      })
+    test() {
+      // this.HRActionSheet(['11', '22'], (obj)=>{
+      //   console.log(obj)
+      // })
+
+      // this.HRToast('操作成功', 'checked')
+
+      this.HRPicker(["飞机票", "火车票", "公交票", "的士票", "其它"], obj => {
+        console.log(obj);
+      });
     },
 
     imageCapture() {}

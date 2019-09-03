@@ -134,6 +134,58 @@ export default {
 
       // Open
       self.actionsToPopover.open();
+    },
+
+    HRPicker(buttonArray, callBack) {
+      if (buttonArray.length === 0 || !buttonArray) {
+        return;
+      }
+
+
+
+      const self = this;
+      const app = self.$f7;
+      let objectPicker = this.$f7.picker.create({
+        // inputEl: "#app",
+        // rotateEffect: true,
+        backdrop: true,
+        // openIn: "sheet", // sheet popover
+        toolbar: false,
+        // toolbarCloseText: "确定",
+        // renderToolbar: function() {
+        //   return (
+        //     '<div class="toolbar">' +
+        //       '<div class="toolbar-inner">' +
+        //         '<div class="left">' +
+        //           '<a href="#" class="link toolbar-randomize-link">取消</a>' +
+        //         "</div>" +
+        //         '<div class="right">' +
+        //           '<a href="#" class="link sheet-close popover-close">确定</a>' +
+        //         "</div>" +
+        //       "</div>" +
+        //     "</div>"
+        //   );
+        // },
+        formatValue: val => {
+          return val + "--";
+        },
+        cols: [
+          {
+            textAlign: "center",
+            values: buttonArray,
+            onChange: (picker, value, displayValue) => {
+              
+              var index = buttonArray.indexOf(value)
+
+              callBack({
+                name: value,
+                index: index
+              })
+            }
+          }
+        ]
+      });
+      objectPicker.open();
     }
   }
 };
