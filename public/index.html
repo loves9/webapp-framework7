@@ -23,12 +23,17 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="theme-color" content="#2196f3" />
     <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no"/>
+    <meta name="msapplication-tap-highlight" content="no" />
     <title>webapp</title>
     <!-- built style files will be auto injected -->
     <style>
       .statusbar-overlay {
         background: #298ccf;
+      }
+
+      /* 基于UI width=750px DPR=2的页面 */
+      html {
+        font-size: calc(100vw / 7.5);
       }
     </style>
   </head>

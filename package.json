@@ -4,8 +4,8 @@
   "description": "Framework7 Vue for RXT",
   "scripts": {
     "dev": "vue-cli-service serve",
-    "prod": "vue-cli-service build --mode production",
-    "release": "vue-cli-service build --mode release",
+    "build:prod": "vue-cli-service build --mode production",
+    "build:release": "vue-cli-service build --mode release",
     "start": "npm run dev",
     "copy-fonts": "cpy node_modules/framework7-icons/fonts/*.* src/style/fonts && cpy node_modules/material-design-icons/iconfont/*.{eot,ttf,woff,woff2} src/style/fonts",
     "postinstall": "npm run copy-fonts",

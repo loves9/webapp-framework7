@@ -1,19 +1,4 @@
 /* Your app styles here */
-.navbar {
-  background-color: #298ccf;
-  color: #ffffff;
-}
-
-.color-red {
-  --f7-theme-color: #EF5350;
-}
-
-/* .input-dropdown-wrap:before, .input-dropdown:before {
-  border-left: none;
-  border-right: none;
-  border-top: none;
-} */
-
 :root {
   --f7-theme-color: #298ccf;
   --f7-color-red: #EF5350;
@@ -46,15 +31,15 @@
 
 .ios {
   /* ActionSheet */
-  --f7-actions-bg-color: #fff;
+  --f7-actions-bg-color: rgba(255, 255, 255, 0.95);
   --f7-actions-border-radius: 0px;
   /* --f7-actions-button-border-color: transparent; */
   --f7-actions-button-text-color: rgba(0, 0, 0, 0.87);
   --f7-actions-button-pressed-bg-color: #e5e5e5;
   --f7-actions-button-padding: 0 16px;
   --f7-actions-button-text-align: center;
-  --f7-actions-button-height: 48px;
-  --f7-actions-button-height-landscape: 48px;
+  --f7-actions-button-height: 52px;
+  --f7-actions-button-height-landscape: 52px;
   --f7-actions-button-font-size: 16px;
   --f7-actions-button-icon-size: 24px;
   --f7-actions-button-justify-content: center;
@@ -62,7 +47,7 @@
   --f7-actions-label-text-color: rgba(0, 0, 0, 0.54);
   --f7-actions-label-font-size: 16px;
   --f7-actions-group-border-color: #d2d2d6;
-  --f7-actions-group-margin: 0px;
+  --f7-actions-group-margin: 0px 0px 0px 0px;
   --f7-actions-grid-button-icon-size: 48px;
 
   /* List View */
@@ -85,4 +70,27 @@
   /* Grid */
   --f7-grid-gap: 1px;
   
+}
+
+.navbar {
+  background-color: #298ccf;
+  color: #ffffff;
+}
+
+.color-red {
+  --f7-theme-color: #EF5350;
+}
+
+/* .input-dropdown-wrap:before, .input-dropdown:before {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+} */
+
+.actions-modal {
+  background-color: rgba(234, 234, 234, 1);
+}
+
+.actions-group + .actions-group {
+  margin-top: 6px;
 }

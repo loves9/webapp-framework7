@@ -1,12 +1,13 @@
 <template>
   <f7-page>
     <!-- <f7-navbar>
-            <f7-nav-left back-link color="white"></f7-nav-left>
-            <f7-nav-title>About</f7-nav-title>
-    </f7-navbar>-->
+      <f7-nav-left back-link color="white"></f7-nav-left>
+      <f7-nav-title>About</f7-nav-title>
+    </f7-navbar> -->
     <f7-block-title>HOME</f7-block-title>
 
     <!-- <img :src="image" alt style="width:100vw; background-color:red" /> -->
+    <f7-button fill raised @click="test">test</f7-button>
 
     <f7-button fill raised @click="next">下一页</f7-button>
   </f7-page>
@@ -34,10 +35,16 @@ export default {
 
       this.imageCapture();
     },
+    test(){
+      this.HRActionSheet(['11', '22'], (obj)=>{
+        console.log(obj)
+      })
+    },
 
-    imageCapture() {
-
-    }
+    imageCapture() {}
   }
 };
 </script>
+
+<style lang="less">
+</style>
