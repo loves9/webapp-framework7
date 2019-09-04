@@ -10,6 +10,19 @@
     <f7-button fill raised @click="test">test</f7-button>
 
     <f7-button fill raised @click="next">下一页</f7-button>
+
+    <f7-list>
+      <f7-list-item
+        title="Mac or Windows"
+        smart-select
+        :smart-select-params="{openIn: 'sheet', backdrop: true, sheetCloseLinkText: '确定'}"
+      >
+        <select name="mac-windows">
+          <option value="mac" selected>Mac</option>
+          <option value="windows">Windows</option>
+        </select>
+      </f7-list-item>
+    </f7-list>
   </f7-page>
 </template>
 
@@ -36,15 +49,15 @@ export default {
       this.imageCapture();
     },
     test() {
-      // this.HRActionSheet(['11', '22'], (obj)=>{
-      //   console.log(obj)
-      // })
+      this.HRActionSheet(['11', '22'], (obj)=>{
+        console.log(obj)
+      })
 
       // this.HRToast('操作成功', 'checked')
 
-      this.HRPicker(["飞机票", "火车票", "公交票", "的士票", "其它"], obj => {
-        console.log(obj);
-      });
+      // this.HRPicker(["飞机票", "火车票", "公交票", "的士票", "其它"], obj => {
+      //   console.log(obj);
+      // });
     },
 
     imageCapture() {}

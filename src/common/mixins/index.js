@@ -136,6 +136,13 @@ export default {
       self.actionsToPopover.open();
     },
 
+    /**
+     * Picker
+     *
+     * @param {*} buttonArray
+     * @param {*} callBack
+     * @returns
+     */
     HRPicker(buttonArray, callBack) {
       if (buttonArray.length === 0 || !buttonArray) {
         return;

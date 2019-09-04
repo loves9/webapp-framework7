@@ -8,6 +8,8 @@
     <f7-view main class="safe-areas">
       <home-view></home-view>
     </f7-view>
+
+    <!-- <div class="sheet-backdrop backdrop-in"></div> -->
   </f7-app>
 </template>
 
@@ -15,7 +17,7 @@
 // Import Routes
 import routes from "./routes.js";
 
-import HomeView from './pages/HomeScreen.vue'
+import HomeView from "./pages/HomeScreen.vue";
 
 export default {
   components: {
@@ -33,10 +35,17 @@ export default {
         view: {
           stackPages: true,
           pushState: true,
-          pushStateSeparator: "#",
+          pushStateSeparator: "#"
         },
         on: {
           // each object key means same name event handler
+        },
+        sheet: {
+          closeByBackdropClick: false,
+          backdrop: true
+        },
+        smartSelect: {
+          backdrop: true
         }
       }
     };
