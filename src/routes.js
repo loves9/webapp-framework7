@@ -10,13 +10,11 @@ export default [
   //   path: '(.*)',
   //   component: HomePage
   // },
-  // {
-  //   name: '/',
-  //   path: '/',
-  //   redirect: '/about/',
-  //   // component: HomePage
-  //   // keepAlive: true
-  // },
+  {
+    name: '/',
+    path: '/',
+    component: HomePage
+  },
   {
     name: '/home/',
     path: '/home/',
