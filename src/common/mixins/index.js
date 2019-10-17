@@ -148,8 +148,6 @@ export default {
         return;
       }
 
-
-
       const self = this;
       const app = self.$f7;
       let objectPicker = this.$f7.picker.create({
@@ -181,18 +179,113 @@ export default {
             textAlign: "center",
             values: buttonArray,
             onChange: (picker, value, displayValue) => {
-              
-              var index = buttonArray.indexOf(value)
+              var index = buttonArray.indexOf(value);
 
               callBack({
                 name: value,
                 index: index
-              })
+              });
             }
           }
         ]
       });
       objectPicker.open();
+    },
+    /**
+     * ActionSheet
+     *
+     * @param {*} buttonArray 按钮字符串数组
+     * @param {*} callBack 回调函数
+     */
+    HRActionSheet(buttonArray, callBack) {
+      var buttons = [];
+      for (const key in buttonArray) {
+        if (buttonArray.hasOwnProperty(key)) {
+          const element = buttonArray[key];
+
+          var item = {
+            text: element,
+            onClick: function() {
+              callBack({ text: element, index: key });
+            }
+          };
+
+          buttons.push(item);
+        }
+      }
+
+      const self = this;
+      const app = self.$f7;
+      if (!self.actionsToPopover) {
+        self.actionsToPopover = app.actions.create({
+          buttons: [
+            buttons,
+            [
+              {
+                text: "取消",
+                onClick: function() {
+                  callBack({ text: "取消", index: -1 });
+                }
+              }
+            ]
+          ],
+          // Need to specify popover target
+          targetEl: self.$el.querySelector(".app")
+        });
+      }
+
+      // Open
+      self.actionsToPopover.open();
+    },
+
+    /**
+     * Confirm
+     *
+     * @param {*} text
+     * @param {*} callback
+     * @param {*} title
+     * @param {*} buttons
+     * @returns
+     */
+    HRConfirm(text, callback, title, buttons) {
+      if (!text) {
+        return;
+      }
+      if (!title) {
+        title = "";
+      }
+      if (!(buttons instanceof Array)) {
+        buttons = ["取消", "确定"];
+      }
+
+      const app = this.$f7;
+      let appConfirm = app.dialog.create({
+        title: title ? title : "",
+        text: text,
+        buttons: [
+          {
+            text: buttons[0],
+            bold: true,
+            color: "black",
+            onClick: () => {
+              callback(0);
+            }
+          },
+          {
+            text: buttons[1],
+            bold: true,
+            color: "black",
+            onClick: () => {
+              callback(1);
+            }
+          }
+        ],
+        on: {
+          opened: function() {}
+        }
+      });
+
+      appConfirm.open();
     }
   }
 };

@@ -1,5 +1,5 @@
 <template>
-  <f7-page>
+  <f7-page @page:afterin="onPageAfterIn">
     <!-- <f7-navbar>
       <f7-nav-left back-link color="white"></f7-nav-left>
       <f7-nav-title>About</f7-nav-title>
@@ -40,6 +40,12 @@ export default {
     console.log("HomePage destroyed");
   },
   methods: {
+    onPageAfterIn(pageData) {
+      // console.log(pageData)
+    },
+    popForResult(data) {
+      console.log(data);
+    },
     next() {
       this.easyPush("/about/", {
         name: "About",
@@ -49,11 +55,14 @@ export default {
       this.imageCapture();
     },
     test() {
-      this.HRActionSheet(['11', '22'], (obj)=>{
-        console.log(obj)
-      })
+      // this.$emit('popForResult', {aaa: 1});
+      // this.HRActionSheet(['11', '22'], (obj)=>{
+      //   console.log(obj)
+      // })
 
-      // this.HRToast('操作成功', 'checked')
+      this.HRConfirm("操作成功交会拉克登记卡al?", (index) => {
+        console.log("sssss", index);
+      });
 
       // this.HRPicker(["飞机票", "火车票", "公交票", "的士票", "其它"], obj => {
       //   console.log(obj);

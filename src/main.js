@@ -1,5 +1,6 @@
 // Import Vue
 import Vue from "vue";
+import store from './store';
 
 // Import F7
 import Framework7 from "framework7/framework7.esm.bundle.js";
@@ -52,7 +53,7 @@ Vue.prototype.$core = core;
 
 let globalVueObject = new Vue({
   // router,
-  // store,
+  store,
   render: h => h(App)
 }).$mount("#app");
 

@@ -17,6 +17,7 @@ const routerManager = {
     if (url == undefined) {
       self.$f7router.back();
     } else {
+      
       self.$f7.views.main.router.back(url, { force: true });
     }
   }

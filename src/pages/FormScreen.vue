@@ -91,10 +91,18 @@
 
 <script>
 export default {
-  mounted() {},
+  mounted() {
+    this.$f7.on("test", function(page) {
+      // do something on page init
+      console.log(page);
+    });
+  },
   methods: {
     backHome() {
-      this.easyPop("/");
+      console.log(this.$f7);
+      this.$f7.emit("test", { fff: 1111 });
+      return;
+      // this.easyPop("/", { refresh: false, force: true, pushState: false });
     }
   }
 };
