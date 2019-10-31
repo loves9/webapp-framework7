@@ -4763,10 +4763,10 @@ hpack.js@^2.1.6:
     readable-stream "^2.0.1"
     wbuf "^1.1.0"
 
-hrkj-vux-components@0.0.18:
-  version "0.0.18"
-  resolved "https://registry.yarnpkg.com/hrkj-vux-components/-/hrkj-vux-components-0.0.18.tgz#64e2160ae1ffe0eaa6ff0d5787417ea90d72dc3f"
-  integrity sha512-0q9g1e0vR6GG/4XGavj6rSy8lvr1dj1BVjVAQb894AEDQ4cvhcoGBdp+tN09cSnzu3TxLRzYzbSVihC8r/VvhQ==
+hrkj-vux-components@^0.0.20:
+  version "0.0.20"
+  resolved "https://registry.yarnpkg.com/hrkj-vux-components/-/hrkj-vux-components-0.0.20.tgz#cfde2e9f7c00c65633dad43ffb99352dcc89300f"
+  integrity sha512-no4SQBWG6u9yJPOWHvILKyL1vnJvMY7PVNP7HvazafBrecoUO7EVaOKrCdzAKr0x+IkOoYQbtbgBy+h016w0Rw==
   dependencies:
     "@antv/f2" "^3.1.4-beta.2"
     array-filter "^1.0.0"
@@ -9838,7 +9838,7 @@ vux-xscroll@^3.1.10:
   resolved "https://registry.yarnpkg.com/vux-xscroll/-/vux-xscroll-3.1.12.tgz#e352e7f9dc5f9fee9253db331c967dd56b3bc950"
   integrity sha1-41Ln+dxfn+6SU9szHJZ91Ws7yVA=
 
-vux@^2.9.2:
+vux@^2.9.4:
   version "2.9.4"
   resolved "https://registry.yarnpkg.com/vux/-/vux-2.9.4.tgz#3964df4f0ac54b3fbf6cc9beb072e44dce00afaa"
   integrity sha512-KSqrK8f1gBJjxb0wvltFfc6Bjs8N4OoIlo3RS6qrN5uZV/ouosrcXgmLpXe2vesDalLG3bVHX08/WTJhZ/qbdA==
