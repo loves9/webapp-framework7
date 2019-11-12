@@ -27,6 +27,7 @@ export default {
   },
   mounted () {
     console.log('AboutPage mounted')
+    console.log(this.$store.getters.getUser)
   },
   destroyed () {
     console.log('AboutPage destroyed')

@@ -38,7 +38,7 @@ export default {
   },
   destroyed() {
     console.log("HomePage destroyed");
-  },
+  }, 
   methods: {
     onPageAfterIn(pageData) {
       // console.log(pageData)
@@ -55,14 +55,19 @@ export default {
       this.imageCapture();
     },
     test() {
+      this.$store.dispatch("login", {
+        id: "9527",
+        name: "ssss",
+        token: "8888"
+      });
       // this.$emit('popForResult', {aaa: 1});
       // this.HRActionSheet(['11', '22'], (obj)=>{
       //   console.log(obj)
       // })
 
-      this.HRConfirm("操作成功交会拉克登记卡al?", (index) => {
-        console.log("sssss", index);
-      });
+      // this.HRConfirm("操作成功交会拉克登记卡al?", (index) => {
+      //   console.log("sssss", index);
+      // });
 
       // this.HRPicker(["飞机票", "火车票", "公交票", "的士票", "其它"], obj => {
       //   console.log(obj);

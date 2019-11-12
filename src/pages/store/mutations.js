@@ -1,9 +1,10 @@
-
-import * as types from './types.js'
+import * as types from "./types.js";
 
 export default {
-    // [types.AUTH_LOGIN](state, payload) {
-    //     state.user = payload;
-    // }
-}
-    
+  [types.LOGIN](state, payload) {
+    state.user = payload;
+  },
+  [types.LOGOUT](state) {
+    state.user = { id: "", name: "", token: "" };
+  }
+};
