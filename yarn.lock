@@ -4336,25 +4336,25 @@ fragment-cache@^0.2.1:
   dependencies:
     map-cache "^0.2.2"
 
-framework7-icons@^2.3.1:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/framework7-icons/-/framework7-icons-2.3.1.tgz#c42581c859056a7c86b3280b2213f680646ea93f"
-  integrity sha512-qwXpXBF75/HUCS+XVPZLv4gcRI9ccve4d+r0QS19aU7BvlMj/MTM2gR8na+Q03Q4y1z8oyNoloi1+drxlttbzA==
+framework7-icons@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/framework7-icons/-/framework7-icons-3.0.0.tgz#7545c16694b21d04168c81d1b34d36cbb0b510ae"
+  integrity sha512-+mB8XhEAaIjjfRNlqW2tk7kYfPrQvDmDVpRFUjeUOiPDqqOybYmC9McvVPwwmqmob4nD3iZFWfs+rAMkVs5vPQ==
 
-framework7-vue@^4.4.0:
-  version "4.4.3"
-  resolved "https://registry.yarnpkg.com/framework7-vue/-/framework7-vue-4.4.3.tgz#267df7d599fafdaf1cfb8c2c7c7e4303d1e3d3d9"
-  integrity sha512-cPgIDGs7cDfxy1Kx6uT3CardgRgQFyd7e5fwFcMtgInladrTthbyQLUsVFogDa06mc8hRu/N1sJK+K3x/uuM7Q==
+framework7-vue@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/framework7-vue/-/framework7-vue-5.2.0.tgz#785f276a3e79e74d4f827215125c1fc974a0d27d"
+  integrity sha512-Km2g7u5j6xh0chZDI4vpvLT8ZxNsol+o3MAfyBhkQEvF4Os1ikd76ZiQwV0pLrOIC9Lrkc7s1LZZA5FFVGiEGA==
 
-framework7@^4.4.0:
-  version "4.4.3"
-  resolved "https://registry.yarnpkg.com/framework7/-/framework7-4.4.3.tgz#a81625e27e54c3c5c7b2fba8dceb1c46c549f5cd"
-  integrity sha512-hXfLxGRRWNt9bUHC5r/IkWjGSlbxGrhxlPKd2Q5qRPRQo7cTt6T3Kd7fG2JaaDLB4oLKvDa1T2fgRj2xAalf9g==
+framework7@^5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/framework7/-/framework7-5.2.0.tgz#30bb6029a4cf0caf35b97bba8aba42cd1e207e64"
+  integrity sha512-rdeg1TVl6p758ANU9NAwoglkO46TOJc7aQXw5Pvku8FE/Wz6iHpC48CKA2RbB2yNUMR0K3e14t4EzRaEbDDLYA==
   dependencies:
     dom7 "^2.1.3"
-    path-to-regexp "^3.0.0"
+    path-to-regexp "^6.1.0"
     ssr-window "^1.0.1"
-    template7 "^1.4.1"
+    template7 "^1.4.2"
 
 fresh@0.5.2:
   version "0.5.2"
@@ -4763,10 +4763,10 @@ hpack.js@^2.1.6:
     readable-stream "^2.0.1"
     wbuf "^1.1.0"
 
-hrkj-vux-components@^0.0.20:
-  version "0.0.20"
-  resolved "https://registry.yarnpkg.com/hrkj-vux-components/-/hrkj-vux-components-0.0.20.tgz#cfde2e9f7c00c65633dad43ffb99352dcc89300f"
-  integrity sha512-no4SQBWG6u9yJPOWHvILKyL1vnJvMY7PVNP7HvazafBrecoUO7EVaOKrCdzAKr0x+IkOoYQbtbgBy+h016w0Rw==
+hrkj-vux-components@^0.0.22:
+  version "0.0.22"
+  resolved "https://registry.yarnpkg.com/hrkj-vux-components/-/hrkj-vux-components-0.0.22.tgz#79941563cc7a81921de9847b0e6c264c9964e7e1"
+  integrity sha512-qevRDNEgDZmwFVz9DUKWCrM3KCTYR2PNFe9niz9QMF1JbVTQfQBXh0q2GW1scJCs8ESIQo7LkilRp2YzbyA2jQ==
   dependencies:
     "@antv/f2" "^3.1.4-beta.2"
     array-filter "^1.0.0"
@@ -7084,10 +7084,10 @@ path-to-regexp@^1.0.3:
   dependencies:
     isarray "0.0.1"
 
-path-to-regexp@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-3.0.0.tgz#c981a218f3df543fa28696be2f88e0c58d2e012a"
-  integrity sha512-ZOtfhPttCrqp2M1PBBH4X13XlvnfhIwD7yCLx+GoGoXRPQyxGOTdQMpIzPSPKXAJT/JQrdfFrgdJOyAzvgpQ9A==
+path-to-regexp@^6.1.0:
+  version "6.1.0"
+  resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-6.1.0.tgz#0b18f88b7a0ce0bfae6a25990c909ab86f512427"
+  integrity sha512-h9DqehX3zZZDCEm+xbfU0ZmwCGFCAAraPJWMXJ4+v32NjZJilVg3k1TcKsRgIb8IQ/izZSaydDc1OhJCZvs2Dw==
 
 path-type@^2.0.0:
   version "2.0.0"
@@ -9242,10 +9242,10 @@ tar@^4:
     safe-buffer "^5.1.2"
     yallist "^3.0.3"
 
-template7@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/template7/-/template7-1.4.1.tgz#c3b2b03d6879e1c5f8a79067c961c8896ffaeec6"
-  integrity sha512-sYZ9Wl5kFuNSvLcMPq8z4oenG7rDho6KnB2vWyvMJCdI1guJhxTEU0TCwr6Nd1Jx34kSOmrpJakMGxJgCc55yg==
+template7@^1.4.2:
+  version "1.4.2"
+  resolved "https://registry.yarnpkg.com/template7/-/template7-1.4.2.tgz#62f32959361e455ec171ef9ef33d29ca7130e009"
+  integrity sha512-eoKnScBMDk7lyj7+iCzKbxGiSLLlQk0DNvmclyJuMCUKxy9JrFuAB+GD5iplF4WiQPtMdI06CHHks3avL22JXA==
 
 term-size@^1.2.0:
   version "1.2.0"
