@@ -30,8 +30,8 @@ export default [
     path: '/form/',
     component: FormPage
   },
-  {
-    path: '/dynamic-route/blog/:blogId/post/:postId/',
-    component: DynamicRoutePage
-  }
+  // {
+  //   path: '/dynamic-route/blog/:blogId/post/:postId/',
+  //   component: DynamicRoutePage
+  // }
 ]

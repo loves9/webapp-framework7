@@ -1,25 +1,47 @@
 // Import Vue
 import Vue from "vue";
-import store from './store';
+import store from "./store";
 
 // Import F7
 import Framework7 from "framework7/framework7.esm.bundle.js";
-
 // Import F7 Vue Plugin
 import Framework7Vue from "framework7-vue/framework7-vue.esm.bundle.js";
+// Init F7 Vue Plugin
+Framework7.use(Framework7Vue);
+// import {
+//   f7App,
+//   f7Navbar,
+//   f7Statusbar,
+//   f7Button,
+//   f7View,
+//   f7List,
+//   f7ListItem,
+//   f7Page,
+//   f7BlockTitle,
+// } from "framework7-vue";
+// Vue.component("f7-app", f7App);
+// Vue.component("f7-navbar", f7Navbar);
+// Vue.component("f7-statusbar", f7Statusbar);
+// Vue.component("f7-page", f7Page);
+// Vue.component("f7-view", f7View);
+// Vue.component("f7-button", f7Button);
+// Vue.component("f7-list", f7List);
+// Vue.component("f7-list-item", f7ListItem);
+// Vue.component("f7-block-title", f7BlockTitle);
 
 // Import F7 Styles
 import "framework7/css/framework7.bundle.css";
-
-import { PopupPicker, Tab, TabItem, XDialog, TransferDom } from "vux";
-Vue.component('x-dialog',XDialog);
-// Vue.directive('transfer-dom', TransferDom)
 
 // Import Icons and App Custom Styles
 import "./style/css/icons.css";
 import "./style/css/app.css";
 
-import "@/lib/iconfont/iconfont.css";
+import { Tab, TabItem, TransferDom } from "vux";
+// Vue.component("tab", Tab);
+// Vue.component("tab-item", TabItem);
+// Vue.directive('transfer-dom', TransferDom)
+
+// import "@/lib/iconfont/iconfont.css";
 import "./style/public.less";
 import "./style/theme.less";
 // import './style/weui.min.css'
@@ -32,9 +54,6 @@ import Native from "@/core/native_plugin.js";
 // Import App Component
 import App from "./App.vue";
 window.NativeApi = Native;
-
-// Init F7 Vue Plugin
-Framework7.use(Framework7Vue);
 
 // 注册全局方法
 Vue.mixin(mixins);

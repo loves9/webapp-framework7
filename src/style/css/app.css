@@ -2,8 +2,9 @@
 :root {
   --f7-theme-color: #298ccf;
   --f7-color-red: #EF5350;
-  --f7-bars-border-color: rgba(238, 238, 238, 1);
+  --f7-bars-border-color: rgba(228, 228, 228, 1);
   /* --f7-theme-color-tint: #298ccf; */
+  --f7-list-item-border-color: var(--f7-bars-border-color);
 
   /* Preloader */
   --f7-preloader-modal-padding: 30px;
@@ -20,6 +21,9 @@
   --f7-list-item-title-font-weight: 400;
   --f7-list-item-title-text-color: #333333;
 
+  /* Page */
+  --f7-page-bg-color: rgba(238, 238, 238, 1);
+
   /* Inputs/Form Inputs */
   --f7-input-outline-height: 30px;
   --f7-input-outline-border-color: #C0C4CC;
@@ -28,7 +32,6 @@
   --f7-skeleton-color: #ccc;
 
   /* Picker */
-  
   /* --f7-picker-item-height: 48px; */
 
 }
@@ -83,7 +86,7 @@
   --f7-picker-item-selected-text-color: #333333;
   --f7-picker-item-text-color: rgba(175, 175, 175, 1);
   --f7-picker-divider-text-color: #EF5350;
-  --f7-picker-item-selected-border-color: rgba(238, 238, 238, 1);
+  /* --f7-picker-item-selected-border-color: rgba(238, 238, 238, 1); */
 
   /* Sheet Modal */
   --f7-sheet-bg-color: rgba(255, 255, 255, 1);
