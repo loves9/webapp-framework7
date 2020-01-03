@@ -101,7 +101,7 @@ class BusinessRequest {
   requestCount = 0;
   requestIdPrefix = (function() {
     var date = new Date();
-    return "R" + date.getHours() + date.getMinutes() + date.getSeconds();
+    return "HR" + date.getHours() + date.getMinutes() + date.getSeconds();
   })();
   getReqeustId() {
     return this.requestIdPrefix + this.requestCount++;

@@ -5,6 +5,18 @@ export default {
      *
      * @param {string} title
      */
+    HRLog(content, tag) {
+      
+      if (process.env.NODE_ENV == "development") {
+        console.log(content, tag);
+      }
+    },
+
+    /**
+     * 设置页面标题
+     *
+     * @param {string} title
+     */
     setTitle(title) {
       MXWebui.setWebViewTitle(title);
     },
