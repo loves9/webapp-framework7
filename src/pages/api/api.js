@@ -9,6 +9,7 @@ const HttpBusinessRequest = {
   queryMockServer () {
     var args = {
       method: 'get',
+      mask: false,
       url: 'api://user' // 带api://会自动拼接baseurl
     }
 

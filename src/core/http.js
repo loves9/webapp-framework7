@@ -300,7 +300,8 @@ class BusinessRequest {
         data: parameter
       })
         .then(response => {
-          GlobalVueObject.$f7.dialog.close();
+          console.log('then', response)
+          this.closePreloader();
 
           if (response.status == 200) {
             _this.success(response.data, response.status, "");
@@ -311,8 +312,8 @@ class BusinessRequest {
           _this.complete();
         })
         .catch(error => {
-          console.log(error);
-          GlobalVueObject.$f7.dialog.close();
+          console.log('error')
+          this.closePreloader();
 
           if (_this.config.autoToast) {
             // GlobalVueObject.$vux.toast.show({

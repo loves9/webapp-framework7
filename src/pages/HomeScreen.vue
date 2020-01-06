@@ -28,6 +28,8 @@
 </template>
 
 <script>
+import HttpBusinessRequest from "./api/api";
+
 export default {
   data() {
     return {
@@ -39,7 +41,7 @@ export default {
   },
   destroyed() {
     console.log("HomePage destroyed");
-  }, 
+  },
   methods: {
     onPageAfterIn(pageData) {
       // console.log(pageData)
@@ -52,15 +54,13 @@ export default {
         name: "About",
         index: 2
       });
-
-      this.imageCapture();
     },
     test() {
-      this.$store.dispatch("login", {
-        id: "9527",
-        name: "ssss",
-        token: "8888"
-      });
+      // this.$store.dispatch("login", {
+      //   id: "9527",
+      //   name: "ssss",
+      //   token: "8888"
+      // });
       // this.$emit('popForResult', {aaa: 1});
       // this.HRActionSheet(['11', '22'], (obj)=>{
       //   console.log(obj)
@@ -73,9 +73,76 @@ export default {
       // this.HRPicker(["飞机票", "火车票", "公交票", "的士票", "其它"], obj => {
       //   console.log(obj);
       // });
+
+      this.requestAll();
     },
 
-    imageCapture() {}
+    sendRequest(resolve, reject) {
+      let request = HttpBusinessRequest.queryMockServer();
+      request.complete = () => {};
+      request.success = (data, status, xhr) => {
+        this.HRLog(data, "hrlog-s");
+        resolve(data);
+      };
+      request.error = (data, status, xhr) => {
+        this.HRLog(data, "hrlog-f");
+        reject(data);
+      };
+
+      request.send();
+    },
+
+    // 串行
+    async requestQueue() {
+      console.log("p1start");
+      let p1 = await new Promise(this.sendRequest)
+        .then(result => {
+          console.log("成功：" + result);
+        })
+        .catch(reason => {
+          console.log("失败：" + reason);
+        });
+
+      console.log("p1end");
+
+      console.log("p2start");
+
+      let p2 = await new Promise(this.sendRequest)
+        .then(result => {
+          console.log("成功：" + result);
+        })
+        .catch(reason => {
+          console.log("失败：" + reason);
+        });
+
+      console.log("p2end");
+    },
+
+    // 并行
+    async requestAll() {
+      let datas = await Promise.all([
+        new Promise(this.sendRequest)
+          .then(result => {
+            console.log("成功：" + result);
+          })
+          .catch(reason => {
+            console.log("失败：" + reason);
+          }),
+        new Promise(this.sendRequest)
+          .then(result => {
+            console.log("成功：" + result);
+          })
+          .catch(reason => {
+            console.log("失败：" + reason);
+          })
+      ])
+        .then(result => {
+          console.log("all成功：" + result);
+        })
+        .catch(reason => {
+          console.log("all失败：" + reason);
+        });
+    }
   }
 };
 </script>
