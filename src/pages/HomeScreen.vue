@@ -4,7 +4,8 @@
       <f7-nav-left back-link color="white"></f7-nav-left>
       <f7-nav-title>About</f7-nav-title>
     </f7-navbar>-->
-    <f7-block-title>HOME</f7-block-title>
+    <!-- <f7-block-title>{{$store.state}}</f7-block-title> -->
+    <f7-block-title>computed:{{homeState}}</f7-block-title>
     <!-- <i class="material-icons" style="color:red; font-size:30px">check</i> -->
 
     <!-- <img :src="image" alt style="width:100vw; background-color:red" /> -->
@@ -12,7 +13,7 @@
 
     <f7-button fill raised @click="next">下一页</f7-button>
 
-    <f7-list>
+    <!-- <f7-list>
       <f7-list-item
         title="Mac or Windows"
         smart-select
@@ -23,7 +24,7 @@
           <option value="windows">Windows</option>
         </select>
       </f7-list-item>
-    </f7-list>
+    </f7-list> -->
   </f7-page>
 </template>
 
@@ -56,11 +57,13 @@ export default {
       });
     },
     test() {
-      // this.$store.dispatch("login", {
-      //   id: "9527",
-      //   name: "ssss",
-      //   token: "8888"
-      // });
+      this.$store.dispatch("login", {
+        id: "9527",
+        name: "ssss",
+        token: "8888"
+      });
+
+
       // this.$emit('popForResult', {aaa: 1});
       // this.HRActionSheet(['11', '22'], (obj)=>{
       //   console.log(obj)
@@ -74,7 +77,8 @@ export default {
       //   console.log(obj);
       // });
 
-      this.requestAll();
+      // this.requestAll();
+      // this.$f7.device.preloader.show();
     },
 
     sendRequest(resolve, reject) {
@@ -142,6 +146,11 @@ export default {
         .catch(reason => {
           console.log("all失败：" + reason);
         });
+    }
+  },
+  computed: {
+    homeState() {
+      return this.$store.state.home.user.id
     }
   }
 };

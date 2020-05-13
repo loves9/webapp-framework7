@@ -12,7 +12,7 @@ class HRStore extends Vuex.Store {
 const store = new HRStore({
   state: {
     // 页面初始化参数，一般为 module 跳转时候才会产生，如：native页面跳转
-    initParams: {}
+    // initParams: {}
   },
 
   getters: {

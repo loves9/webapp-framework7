@@ -1,11 +1,10 @@
 import * as types from './types.js'
 // import { LOGIN, LOGOUT } from "./types";
 
-const ls = window.localStorage;
+// const ls = window.localStorage;
 
 export default {
   login: ({ commit, state }, payload) => {
-    console.log("home-vuex-commit", JSON.stringify(commit));
     console.log("home-vuex-state", JSON.stringify(state));
     console.log("home-vuex-payload", JSON.stringify(payload));
     // ls["VUE_DEMO_USER"] = JSON.stringify(user);
