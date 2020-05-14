@@ -61,7 +61,15 @@ export default {
         id: "9527",
         name: "ssss",
         token: "8888"
-      });
+      }).then(() => {
+        console.log('commit提交完成')
+      })
+
+      // this.$store.commit("Auth Login", {
+      //   id: "9527",
+      //   name: "ssss",
+      //   token: "8888"
+      // })
 
 
       // this.$emit('popForResult', {aaa: 1});
