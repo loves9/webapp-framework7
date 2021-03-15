@@ -102,53 +102,6 @@ export default {
     },
 
     /**
-     * ActionSheet
-     *
-     * @param {*} buttonArray 按钮字符串数组
-     * @param {*} callBack 回调函数
-     */
-    HRActionSheet(buttonArray, callBack) {
-      var buttons = [];
-      for (const key in buttonArray) {
-        if (buttonArray.hasOwnProperty(key)) {
-          const element = buttonArray[key];
-
-          var item = {
-            text: element,
-            onClick: function() {
-              callBack({ text: element, index: key });
-            }
-          };
-
-          buttons.push(item);
-        }
-      }
-
-      const self = this;
-      const app = self.$f7;
-      if (!self.actionsToPopover) {
-        self.actionsToPopover = app.actions.create({
-          buttons: [
-            buttons,
-            [
-              {
-                text: "取消",
-                onClick: function() {
-                  callBack({ text: "取消", index: -1 });
-                }
-              }
-            ]
-          ],
-          // Need to specify popover target
-          targetEl: self.$el.querySelector(".app")
-        });
-      }
-
-      // Open
-      self.actionsToPopover.open();
-    },
-
-    /**
      * Picker
      *
      * @param {*} buttonArray

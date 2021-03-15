@@ -17,14 +17,20 @@
   --f7-button-font-weight: 600;
 
   /* List Item */
+  --f7-list-item-min-height: 48px;
+  --f7-list-item-title-line-height: inherit;
   --f7-list-item-title-font-size: 16px;
   --f7-list-item-title-font-weight: 400;
   --f7-list-item-title-text-color: #333333;
+  --f7-list-item-after-text-color: #666666;
+  --f7-list-item-after-font-size: 16px;
 
   /* Page */
   --f7-page-bg-color: rgba(238, 238, 238, 1);
 
   /* Inputs/Form Inputs */
+  --f7-inline-label-font-size: 16px;
+  --f7-inline-label-line-height: 26px;
   --f7-input-outline-height: 30px;
   --f7-input-outline-border-color: #C0C4CC;
 
@@ -75,7 +81,6 @@
   --f7-input-text-color: #666666;
   --f7-label-text-color: #333333;
   --f7-input-font-size: 16px;
-  --f7-inline-label-font-size: 16px;
   --f7-input-height: 48px;
 
   --f7-input-outline-height: 30px;

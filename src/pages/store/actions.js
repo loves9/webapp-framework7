@@ -15,7 +15,7 @@ export default {
         commit(types.LOGIN, payload);
 
         resolve();
-      }, 1000);
+      }, 2000);
     });
   },
   logout: ({ commit }) => {

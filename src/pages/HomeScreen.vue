@@ -58,11 +58,12 @@ export default {
     },
     test() {
       this.$store.dispatch("login", {
-        id: "9527",
+        id: "9527" + Math.floor((Math.random()*100)+1),
         name: "ssss",
         token: "8888"
       }).then(() => {
         console.log('commit提交完成')
+        
       })
 
       // this.$store.commit("Auth Login", {
@@ -150,6 +151,7 @@ export default {
       ])
         .then(result => {
           console.log("all成功：" + result);
+          
         })
         .catch(reason => {
           console.log("all失败：" + reason);

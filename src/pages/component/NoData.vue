@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="hr-nodata-container-cls">
+    <div class="nodata-container">
       <i class="iconfont ic-wushuju-l" style="font-size:120px; color:#999999"></i>
       <span style="color:#999999; margin-top:-10px; font-size:12px">没有数据</span>
     </div>
@@ -17,6 +17,13 @@ export default {
 };
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
 @namespace: "nodata";
+.nodata-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  flex-direction: column;
+}
 </style>
