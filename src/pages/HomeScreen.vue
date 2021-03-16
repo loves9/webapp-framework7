@@ -6,7 +6,6 @@
     </f7-navbar>-->
     <!-- <f7-block-title>{{$store.state}}</f7-block-title> -->
     <f7-block-title>computed:{{homeState}}</f7-block-title>
-    <!-- <i class="material-icons" style="color:red; font-size:30px">check</i> -->
 
     <!-- <img :src="image" alt style="width:100vw; background-color:red" /> -->
     <f7-button fill raised @click="test">test</f7-button>

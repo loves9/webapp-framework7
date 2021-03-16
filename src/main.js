@@ -2,44 +2,62 @@
 import Vue from "vue";
 import store from "./store";
 
-// Import F7
-import Framework7 from "framework7/framework7.esm.bundle.js";
-// Import F7 Vue Plugin
-import Framework7Vue from "framework7-vue/framework7-vue.esm.bundle.js";
-// Init F7 Vue Plugin
+// Import F7 Bundle
+// import Framework7 from 'framework7/lite-bundle'
+// import Framework7 from 'framework7/lite';
+
+// Import F7-Vue Plugin Bundle (with all F7 components registered)
+// import Framework7Vue, { registerComponents } from 'framework7-vue/bundle'
+// import Framework7Vue from 'framework7-vue';
+
+import Framework7Vue from 'framework7-vue';
+
+import Framework7, { Device, Request, Utils } from 'framework7/framework7-lite.esm';
+
+// Init F7-Vue Plugin
 Framework7.use(Framework7Vue);
-// import {
+
+import {
+  f7App,
+  f7View,
+  f7Navbar,
+  f7Page,
+  f7Button,
+  f7List,
+  f7ListItem,
+  f7BlockTitle
+} from "framework7-vue";
+
+// Framework7.use([
 //   f7App,
-//   f7Navbar,
-//   f7Statusbar,
-//   f7Button,
 //   f7View,
+//   f7Navbar,
+//   f7Button,
 //   f7List,
 //   f7ListItem,
 //   f7Page,
-//   f7BlockTitle,
-// } from "framework7-vue";
-// Vue.component("f7-app", f7App);
-// Vue.component("f7-navbar", f7Navbar);
-// Vue.component("f7-statusbar", f7Statusbar);
-// Vue.component("f7-page", f7Page);
-// Vue.component("f7-view", f7View);
-// Vue.component("f7-button", f7Button);
-// Vue.component("f7-list", f7List);
-// Vue.component("f7-list-item", f7ListItem);
-// Vue.component("f7-block-title", f7BlockTitle);
+// ])
+Vue.component("f7-app", f7App);
+Vue.component("f7-view", f7View);
+Vue.component("f7-navbar", f7Navbar);
+Vue.component("f7-page", f7Page);
+Vue.component("f7-view", f7View);
+Vue.component("f7-button", f7Button);
+Vue.component("f7-list", f7List);
+Vue.component("f7-list-item", f7ListItem);
+Vue.component("f7-block-title", f7BlockTitle);
 
 // Import F7 Styles
 import "framework7/css/framework7.bundle.css";
 
 // Import Icons and App Custom Styles
-import "./style/css/icons.css";
+// import "./style/css/icons.css";
 import "./style/css/app.css";
 
 import { Tab, TabItem, TransferDom } from "vux";
-// Vue.component("tab", Tab);
-// Vue.component("tab-item", TabItem);
-// Vue.directive('transfer-dom', TransferDom)
+Vue.component("tab", Tab);
+Vue.component("tab-item", TabItem);
+Vue.directive('transfer-dom', TransferDom)
 
 // import "@/lib/iconfont/iconfont.css";
 import "./style/public.less";
