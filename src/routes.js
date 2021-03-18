@@ -1,8 +1,8 @@
 import HomePage from './pages/HomeScreen.vue'
+import ListPage from './pages/ListScreen.vue'
+
 import AboutPage from './pages/AboutScreen.vue'
 import FormPage from './pages/FormScreen.vue'
-import DynamicRoutePage from './pages/DynamicRoute.vue'
-import NotFoundPage from './pages/NotFound.vue'
 
 export default [
   // {
@@ -19,6 +19,11 @@ export default [
     name: '/home/',
     path: '/home/',
     component: HomePage
+  },
+  {
+    name: '/list/',
+    path: '/list/',
+    component: ListPage
   },
   {
     name: '/about/',

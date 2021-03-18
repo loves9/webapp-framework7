@@ -1,6 +1,6 @@
 import axios from "axios";
 import Statistics from "./statistics";
-
+import { f7 } from 'framework7-vue';
 class BusinessRequest {
   constructor(options = {}) {}
   /**
@@ -177,13 +177,15 @@ class BusinessRequest {
   }
 
   showPreloader() {
-    // GlobalVueObject.$f7.dialog.preloader(this.config.maskMsg)
-    GlobalVueObject.$f7.preloader.show();
+    GlobalVueObject.$f7.dialog.preloader(this.config.maskMsg)
+    // f7.preloader.show()
+    // console.log(f7.preloader)
+
   }
 
   closePreloader() {
-    // GlobalVueObject.$f7.dialog.close()
-    GlobalVueObject.$f7.preloader.hide();
+    GlobalVueObject.$f7.dialog.close()
+    // f7.preloader.hide();
   }
 
   /**

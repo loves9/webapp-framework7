@@ -29,7 +29,7 @@ export default {
       f7params: {
         id: "io.framework7.webapp", // App bundle ID
         name: "Framework7", // App name
-        theme: "ios", // Automatic theme detection
+        // theme: "ios", // Automatic theme detection
         // App routes
         routes: routes,
         view: {
