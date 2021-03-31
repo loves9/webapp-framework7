@@ -16,14 +16,14 @@
         <option>Female</option>
       </f7-list-input>
       <f7-list-input label="Birth date" type="date" placeholder="Birth date" value="2014-04-30" />
-      <f7-list-item title="Toggle">
+      <!-- <f7-list-item title="Toggle">
         <f7-toggle slot="after"></f7-toggle>
-      </f7-list-item>
-      <f7-list-input label="Slider" :input="false">
+      </f7-list-item> -->
+      <!-- <f7-list-input label="Slider" :input="false">
         <f7-range slot="input" :min="0" :max="100" :value="50" :step="1" :label="true"></f7-range>
-      </f7-list-input>
+      </f7-list-input> -->
       <f7-list-input label="Textarea" type="textarea" placeholder="Bio" />
-      <f7-list-input label="Resizable" type="textarea" placeholder="Bio" resizable />
+      <!-- <f7-list-input label="Resizable" type="textarea" placeholder="Bio" resizable /> -->
     </f7-list>
 
     <f7-block-title>Checkbox group</f7-block-title>
@@ -100,8 +100,11 @@ export default {
   methods: {
     backHome() {
       console.log(this.$f7);
-      this.$f7.emit("test", { fff: 1111 });
-      return;
+      // this.$f7.emit("test", { fff: 1111 });
+
+      // this.$f7.preloader.show() // 黑色
+      // this.$f7.dialog.preloader() // 白色
+      this.HRToast('水电费水电费了', 'xmark_circle')
       // this.easyPop("/", { refresh: false, force: true, pushState: false });
     }
   }

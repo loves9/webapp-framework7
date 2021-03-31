@@ -10,14 +10,13 @@
       <span class="label_three">服务电话：010-59618206</span>
     </div>
 
-    <div class="error_btn_cls">
+    <!-- <div class="error_btn_cls">
       <x-button style="background-color:#fff" @click.native="errorButtonClick">{{buttonTitle}}</x-button>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
-import { XButton } from "vux";
 export default {
   props: {
     type: {
@@ -34,7 +33,7 @@ export default {
       labelText_one: "哎呀，出错了…",
       labelText_two: "由于系统原因给您造成不便，",
       labelText_three: "请联系技术支持协助解决。",
-      imagePath: require("./images/error.png")
+      // imagePath: require("./images/error.png")
     };
   },
   mounted() {
@@ -45,7 +44,7 @@ export default {
         this.labelText_one = "精彩内容，稍后呈现…";
         this.labelText_two = "由于目前系统升级中，";
         this.labelText_three = "给您造成不便，敬请谅解。";
-        this.imagePath = require("./images/upgrade.png");
+        // this.imagePath = require("./images/upgrade.png");
         break;
     }
   },
@@ -56,7 +55,6 @@ export default {
     }
   },
   components: {
-    XButton
   }
 };
 </script>

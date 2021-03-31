@@ -8,7 +8,7 @@
 
       <no-data v-show="noData"></no-data>
       <div v-show="!noData">
-        <h-list ref="list1" :dataSource="listData" :headHeight="44"> </h-list>
+        <h-list ref="list1" :dataSource="listData" :headHeight="44" @onPress="onPressed"> </h-list>
       </div>
     </div>
   </f7-page>
@@ -111,9 +111,9 @@ export default {
 
       this.queryFeeCategory(requestParams);
     },
-    chanceItemClick(item) {
+    onPressed(item) {
       // console.log(item);
-      this.easyPush("/chance-detail/", item);
+      this.easyPush("/form/", item);
     },
     queryFeeCategory(params, setUp) {
       this.isLoading = true;

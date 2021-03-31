@@ -84,7 +84,8 @@ export default {
         // material-icons f7-icons
         this.$f7.toast
           .create({
-            icon: '<i class="material-icons">' + icon + "</i>",
+            // icon: `<i class="fa close fa-lg">${icon}</i>`,
+            icon: `<i class="f7-icons">${icon}</i>`,
             text: message,
             position: "center",
             closeTimeout: 2000

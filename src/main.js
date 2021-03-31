@@ -37,6 +37,9 @@ import {
   f7Link,
   f7ListItem,
   f7BlockTitle,
+  f7ListInput,
+  f7Row,
+  f7Icon
 } from "framework7-vue";
 Vue.component("f7-app", f7App);
 Vue.component("f7-view", f7View);
@@ -47,15 +50,18 @@ Vue.component("f7-view", f7View);
 Vue.component("f7-button", f7Button);
 Vue.component("f7-list", f7List);
 Vue.component("f7-list-item", f7ListItem);
+Vue.component("f7-list-input", f7ListInput);
 Vue.component("f7-block-title", f7BlockTitle);
 Vue.component("f7-block", f7Block);
 Vue.component("f7-link", f7Link);
+Vue.component("f7-row", f7Row);
+Vue.component("f7-icon", f7Icon);
 
 // Import F7 Styles
 import "framework7/css/framework7.bundle.css";
 
 // Import Icons and App Custom Styles
-// import "./style/css/icons.css";
+import "./style/css/icons.css";
 import "./style/css/app.css";
 
 import { Tab, TabItem, TransferDom } from "vux";
