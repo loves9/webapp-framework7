@@ -20,9 +20,7 @@ import HttpBusinessRequest from "./api/api";
 
 export default {
   data() {
-    return {
-
-    };
+    return {};
   },
   mounted() {
     console.log("HomePage mounted");

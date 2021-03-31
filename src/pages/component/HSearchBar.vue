@@ -461,7 +461,6 @@ export default {
 }
 
 .hsb-history-item-cls {
-  font-family: PingFangSC-Regular;
   font-size: 14px;
   color: #909399;
   letter-spacing: 0;
@@ -489,7 +488,6 @@ export default {
 }
 
 .search_history_title_cls {
-  font-family: PingFangSC-Regular;
   font-size: 14px;
   color: #606266;
   letter-spacing: 0;

@@ -86,14 +86,12 @@ export default {
   margin-top: 40px;
   padding-left: 89px;
   margin-bottom: 20px;
-  font-family: "PingFangSC-Medium";
 }
 .label_two {
   color: #303133;
   font-size: 16px;
   margin-top: 10px;
   padding-left: 89px;
-  font-family: "PingFangSC-Regular";
 }
 
 .label_three {
@@ -101,7 +99,6 @@ export default {
   font-size: 16px;
   margin-top: 10px;
   padding-left: 89px;
-  font-family: "PingFangSC-Medium";
 }
 .error_btn_cls {
   width: 90%;
