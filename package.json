@@ -22,7 +22,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "framework7": "^5.7.12",
     "framework7-icons": "^4.0.2",
     "framework7-vue": "^5.7.12",
